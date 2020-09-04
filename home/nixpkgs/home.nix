@@ -1,5 +1,6 @@
 { config, pkgs, ... }:
-
+let myAspell = pkgs.aspellWithDicts (d: [d.en d.pt_BR]);
+in
 {
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -27,9 +28,7 @@
     discord
     signal-desktop
     nodejs
-    aspell
-    aspellDicts.pt_BR
-    aspellDicts.en
+    myAspell
   ];
 
   programs.zsh = {
