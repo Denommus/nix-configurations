@@ -30,6 +30,7 @@ in
     nodejs
     myAspell
     nodePackages.node2nix
+    gcc
   ];
 
   programs.zsh = {
