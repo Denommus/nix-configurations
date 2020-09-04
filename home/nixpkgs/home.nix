@@ -29,6 +29,7 @@ in
     signal-desktop
     nodejs
     myAspell
+    nodePackages.node2nix
   ];
 
   programs.zsh = {
