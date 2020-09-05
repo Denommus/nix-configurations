@@ -135,5 +135,13 @@ in
   services.xserver.dpi = 96;
 
   nix.autoOptimiseStore = true;
+
+  swapDevices = [
+    {
+      device = "/swapfile";
+      priority = 0;
+      size = 16384;
+    }
+  ];
 }
 
