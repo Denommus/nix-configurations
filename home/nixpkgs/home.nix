@@ -31,6 +31,7 @@ in
     myAspell
     nodePackages.node2nix
     gcc
+    python3
   ];
 
   programs.zsh = {
