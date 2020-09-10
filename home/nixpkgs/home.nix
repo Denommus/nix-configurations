@@ -32,6 +32,7 @@ in
     nodePackages.node2nix
     gcc
     python3
+    okular
   ];
 
   programs.zsh = {
