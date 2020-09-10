@@ -51,6 +51,9 @@ in
     lfs.enable = true;
     userEmail = "yuridenommus@gmail.com";
     userName = "Yuri Albuquerque";
+    extraConfig = {
+      pull.ff = "only";
+    };
   };
 
   programs.emacs.enable = true;
