@@ -104,7 +104,7 @@ in
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.yuri = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" ];
+    extraGroups = [ "wheel" "networkmanager" "video" ];
     shell = pkgs.zsh;
   };
 
@@ -129,9 +129,9 @@ in
     intelBusId = "PCI:0:2:0";
   };
   hardware.nvidia.modesetting.enable = true;
-  hardware.nvidia.nvidiaPersistenced = true;
+  #hardware.nvidia.nvidiaPersistenced = true;
 
-  services.xserver.videoDrivers = [ "nvidia" "modesetting" ];
+  services.xserver.videoDrivers = [ "nvidia" ];
   services.xserver.dpi = 96;
 
   nix.autoOptimiseStore = true;
