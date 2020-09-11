@@ -374,7 +374,7 @@ in
     lsp-ui = {
       enable = true;
       demand = true;
-      init = "(add-hook 'lsp-mode-hook #'lsp-ui-mode)";
+      init = builtins.readFile ./emacs-inits/lsp-ui.el;
     };
 
     reason-mode = {
