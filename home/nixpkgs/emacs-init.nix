@@ -26,7 +26,7 @@ in
    '(font-lock-comment-face ((t (:foreground "#B7B7B7")))))
   (setq history-delete-duplicates t)
   (setq use-package-always-ensure t)
-  (setq desktop-path '("~/.emacs.d/sessions"))
+  (setq desktop-path '("~/.local/emacs/sessions"))
   (put 'downcase-region 'disabled nil)
   (put 'narrow-to-region 'disabled nil)
   (put 'dired-find-alternate-file 'disabled nil)
@@ -40,13 +40,10 @@ in
   (add-to-list 'eshell-modules-list 'eshell-tramp)
   (require 'cl-lib)
   (setq visible-bell 1)
-  (add-to-list 'load-path "~/.emacs.d/plugins")
-  (add-to-list 'load-path "~/.emacs.d/plugins/erc-sasl")
-  (add-to-list 'load-path "~/.emacs.d/plugins/ob-javascript")
   (setq backup-directory-alist
-        `((".*" . ,(concat user-emacs-directory "backups/"))))
+        `((".*" . "~/.local/emacs/backups")))
   (setq auto-save-file-name-transforms
-        `((".*" ,(concat user-emacs-directory "autosaves/") t)))
+        `((".*" "~/.local/emacs/autosaves")))
   (tool-bar-mode 0)
   (menu-bar-mode 0)
   (scroll-bar-mode 0)
@@ -142,7 +139,7 @@ in
 
   (global-unset-key (kbd "C-z"))
   (setq tetris-score-file
-        "~/.emacs.d/tetris-scores")
+        "~/.local/emacs/tetris-scores")
 
   (setq diary-file "~/Dropbox/diary.gpg")
   (setq calendar-latitude -27.594870
