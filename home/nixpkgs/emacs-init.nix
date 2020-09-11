@@ -103,6 +103,7 @@ in
 
     smartparens = {
       enable = true;
+      demand = true;
       after = [ "hydra" ];
       command = [
         "smartparens-mode"
@@ -352,6 +353,45 @@ in
       bind = {
         "C-c n" = "helm-nixos-options";
       };
+    };
+
+    lsp-mode = {
+      enable = true;
+      bindLocal = {
+        lsp-mode-map = {
+              "C-c C-t" = "lsp-describe-thing-at-point";
+              "C-c C-r" = "lsp-rename";
+              "C-c C-i" = "lsp-describe-thing-at-point";
+              "C-c t" = "lsp-describe-thing-at-point";
+              "C-c r" = "lsp-rename";
+              "C-c i" = "lsp-describe-thing-at-point";
+              "M-." = "xref-find-definitions";
+        };
+      };
+      init = "(setq lsp-prefer-flymake nil)";
+    };
+
+    lsp-ui = {
+      enable = true;
+      demand = true;
+      init = "(add-hook 'lsp-mode-hook #'lsp-ui-mode)";
+    };
+
+    reason-mode = {
+      enable = true;
+      after = [ "lsp-mode" "nix-sandbox" ];
+      init = builtins.readFile ./emacs-inits/reason-mode.el;
+    };
+
+    tuareg = {
+      enable = true;
+      after = [ "lsp-mode" "nix-sandbox" "reason-mode" ];
+      init = builtins.readFile ./emacs-inits/tuareg.el;
+    };
+
+    multiple-cursors = {
+      enable = true;
+      demand = true;
     };
   };
 }
