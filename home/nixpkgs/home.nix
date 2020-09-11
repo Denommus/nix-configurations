@@ -1,9 +1,15 @@
 { config, pkgs, ... }:
 let myAspell = pkgs.aspellWithDicts (d: [d.en d.pt_BR]);
+    nur-no-pkgs = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {};
 in
 {
+
+  imports = [ nur-no-pkgs.repos.rycee.hmModules.emacs-init ];
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  programs.emacs.init = import ./emacs-init.nix { inherit pkgs; };
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
