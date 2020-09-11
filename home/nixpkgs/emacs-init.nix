@@ -393,5 +393,15 @@ in
       enable = true;
       demand = true;
     };
+
+    eyebrowse = {
+      enable = true;
+      demand = true;
+      bind = {
+        "<C-tab>" = "eyebrowse-next-window-config";
+        "<C-iso-lefttab>" = "eyebrowse-prev-window-config";
+      };
+      init = builtins.readFile ./emacs-inits/eyebrowse.el;
+    };
   };
 }
