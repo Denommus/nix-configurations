@@ -38,6 +38,7 @@ in
   programs.zsh = {
     enable = true;
     enableAutosuggestions = true;
+    enableCompletion = true;
     history.extended = true;
     oh-my-zsh = {
       enable = true;
