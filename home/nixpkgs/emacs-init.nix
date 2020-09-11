@@ -255,6 +255,7 @@ in
 
     flycheck = {
       enable = true;
+      demand = true;
       after = [ "nix-sandbox" ];
       command = [
         "global-flycheck-mode"
@@ -266,12 +267,13 @@ in
                           (if sandbox
                             (apply 'nix-shell-command sandbox cmd)
                             cmd))))
-      (global-flycheck-mode)
       '';
+      config = "(global-flycheck-mode 1)";
     };
 
     nix-sandbox = {
       enable = true;
+      demand = true;
       command = [
         "nix-current-sandbox"
       ];
