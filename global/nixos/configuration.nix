@@ -144,5 +144,7 @@ in
       size = 16384;
     }
   ];
+
+  hardware.steam-hardware.enable = true;
 }
 
