@@ -224,8 +224,7 @@ in
                     (eshell-cmpl-initialize)
                     (define-key eshell-mode-map [remap eshell-pcomplete] 'helm-esh-pcomplete)
                     (define-key eshell-mode-map (kbd "M-p") 'helm-eshell-history)
-                    (company-mode -1)
-                    (setenv "SSH_AUTH_SOCK" (concat (getenv "XDG_RUNTIME_DIR") "/gnupg/S.gpg-agent.ssh"))))
+                    (company-mode -1)))
       '';
     };
 
