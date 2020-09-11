@@ -403,9 +403,6 @@ in
 
     cmake-mode = {
       enable = true;
-      mode = [
-        "CMakeLists.txt"
-      ];
     };
 
     cyberpunk-theme = {
