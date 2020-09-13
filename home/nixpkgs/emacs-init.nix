@@ -94,6 +94,8 @@ in
       demand = true;
       command = [
         "nix-current-sandbox"
+        "nix-executable-find"
+        "nix-shell-command"
       ];
     };
 
@@ -219,6 +221,7 @@ in
     };
 
     org = {
+      package = "org-plus-contrib";
       enable = true;
       after = [ "flyspell" ];
       command = [
@@ -245,14 +248,10 @@ in
       config = builtins.readFile ./emacs-configs/org.el;
     };
 
-    org-plus-contrib = {
-      enable = true;
-      after = [ "org" ];
-    };
-
     org-bullets = {
       enable = true;
       after = [ "org" ];
+      demand = true;
       command = [ "org-bullets-mode" ];
       config = "(add-hook 'org-mode-hook #'org-bullets-mode)";
     };
@@ -273,10 +272,22 @@ in
       after = [ "org" ];
     };
 
-    ox-taskjuggler = {
+    # org-plus-contrib = {
+    #   enable = true;
+    #   after = [ "org" ];
+    #   package = emacsPackages: emacsPackages.org-plus-contrib;
+    # };
+
+    # ox-taskjuggler = {
+    #   enable = true;
+    #   after = [ "org" "ox" ];
+    #   init = "(add-to-list 'org-export-backends 'taskjuggler)";
+    # };
+
+    org-ref = {
       enable = true;
-      after = [ "org" "ox" ];
-      init = "(add-to-list 'org-export-backends 'taskjuggler)";
+      after = [ "org" ];
+      demand = true;
     };
 
     ox-epub = {
@@ -331,6 +342,10 @@ in
       enable = true;
     };
 
+    ob-plantuml = {
+      enable = true;
+    };
+
     company = {
       enable = true;
       demand = true;
@@ -357,6 +372,9 @@ in
 
     lsp-mode = {
       enable = true;
+      command = [
+        "lsp"
+      ];
       bindLocal = {
         lsp-mode-map = {
               "C-c C-t" = "lsp-describe-thing-at-point";
@@ -374,6 +392,9 @@ in
     lsp-ui = {
       enable = true;
       demand = true;
+      command = [
+        "lsp-ui-mode"
+      ];
       init = builtins.readFile ./emacs-inits/lsp-ui.el;
     };
 
@@ -397,6 +418,9 @@ in
     eyebrowse = {
       enable = true;
       demand = true;
+      command = [
+        "eyebrowse-mode"
+      ];
       bind = {
         "<C-tab>" = "eyebrowse-next-window-config";
         "<C-iso-lefttab>" = "eyebrowse-prev-window-config";

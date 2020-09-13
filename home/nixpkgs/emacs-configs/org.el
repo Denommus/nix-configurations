@@ -1,6 +1,6 @@
 (add-to-list 'org-latex-packages-alist '("" "minted"))
 (add-to-list 'org-export-backends 'md)
-(require 'org-bibtex)
+;(require 'ox-bibtex)
 (defun deactivate-c-tab ()
   "Deactivate a key in `org-mode'."
   (local-unset-key (kbd "<C-tab>")))
@@ -8,7 +8,7 @@
 (add-hook 'org-mode-hook #'auto-fill-mode)
 (add-hook 'org-mode-hook #'(lambda () (flyspell-mode 1)))
 (require 'org-mu4e)
-(require 'org-ref)
+;(require 'org-ref)
 (require 'org-tempo)
 ;; FIXME: 
 (org-babel-do-load-languages
@@ -23,11 +23,9 @@
    (gnuplot . t)
    (ditaa . t)
    (js . t)
-   (javascript . t)
    (org . t)
    (ruby . t)
    (sql . t)
    (sqlite . t)
    (python . t)
-   (rust . t)
    (plantuml . t)))
