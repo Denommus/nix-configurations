@@ -88,6 +88,7 @@ in
   # Enable sound.
   sound.enable = true;
   hardware.pulseaudio.enable = true;
+  hardware.pulseaudio.support32Bit = true;
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -104,7 +105,7 @@ in
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.yuri = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "video" ];
+    extraGroups = [ "wheel" "networkmanager" "video" "audio" ];
     shell = pkgs.zsh;
   };
 
