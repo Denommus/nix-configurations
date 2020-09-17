@@ -39,6 +39,7 @@ in
     gcc
     python3
     okular
+    cloc
   ];
 
   programs.zsh = {
