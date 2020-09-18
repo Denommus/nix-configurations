@@ -124,7 +124,16 @@ in
 
   hardware.opengl.driSupport32Bit = true;
   hardware.opengl.enable = true;
-  hardware.opengl.extraPackages32 = [ pkgs.pkgsi686Linux.libva ];
+  hardware.opengl.extraPackages = with pkgs; [
+    intel-media-driver
+    vaapiIntel
+    vaapiVdpau
+    libvdpau-va-gl
+  ];
+  hardware.opengl.extraPackages32 = with pkgs.pkgsi686Linux; [
+    libva
+    vaapiIntel
+  ];
   hardware.nvidia.prime = {
     offload.enable = true;
     nvidiaBusId = "PCI:1:0:0";
@@ -147,5 +156,7 @@ in
   ];
 
   hardware.steam-hardware.enable = true;
+
+  nixpkgs.config.firefox.enablePlasmaBrowserIntegration = true;
 }
 
