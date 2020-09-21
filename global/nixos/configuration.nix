@@ -25,9 +25,8 @@ in
   boot.supportedFilesystems = [ "ntfs" ];
 
   networking.hostName = "yuri-nixos"; # Define your hostname.
+  networking.enableIPv6 = false;
   networking.nameservers = [
-    "2001:4860:4860::8888"
-    "2001:4860:4860::8844"
     "8.8.8.8"
     "8.8.4.4"
   ];
