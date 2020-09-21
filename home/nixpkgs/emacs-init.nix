@@ -427,5 +427,10 @@ in
       };
       init = builtins.readFile ./emacs-inits/eyebrowse.el;
     };
+
+    haskell-mode = {
+      enable = true;
+      init = "(add-hook 'haskell-mode-hook #'subword-mode)";
+    };
   };
 }
