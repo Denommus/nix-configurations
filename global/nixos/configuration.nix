@@ -25,6 +25,7 @@ in
   boot.supportedFilesystems = [ "ntfs" ];
 
   networking.hostName = "yuri-nixos"; # Define your hostname.
+  networking.enableIPv6 = false;
   networking.networkmanager.enable = true;
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
