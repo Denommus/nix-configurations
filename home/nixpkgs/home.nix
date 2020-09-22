@@ -40,6 +40,10 @@ in
     python3
     okular
     cloc
+    kdeApplications.gwenview
+    kdeApplications.spectacle
+    vlc
+    obs-studio
   ];
 
   programs.zsh = {

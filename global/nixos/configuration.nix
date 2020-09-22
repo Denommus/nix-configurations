@@ -55,8 +55,6 @@ in
     git
     pciutils
     glxinfo
-    kdeApplications.spectacle
-    kdeApplications.gwenview
     nvidia-offload
     iotop
   ];
