@@ -21,13 +21,15 @@ in
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot.editor = false;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.supportedFilesystems = [ "ntfs" ];
 
   networking.hostName = "yuri-nixos"; # Define your hostname.
   networking.enableIPv6 = false;
   # Disabling ipv6 on the kernel level
-  boot.kernel.sysctl."net.ipv6.conf.eth0.disable_ipv6" = true;
+  boot.kernelParams = [ "ipv6.disable=1" ];
+  boot.kernel.sysctl."net.ipv6.conf.all.disable_ipv6" = true;
   networking.nameservers = [
     "8.8.8.8"
     "8.8.4.4"
