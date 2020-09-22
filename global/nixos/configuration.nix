@@ -28,9 +28,11 @@ in
   networking.hostName = "yuri-nixos"; # Define your hostname.
   networking.enableIPv6 = false;
   # Disabling ipv6 on the kernel level
-  boot.kernelParams = [ "ipv6.disable=1" ];
-  boot.kernel.sysctl."net.ipv6.conf.all.disable_ipv6" = true;
+  # boot.kernelParams = [ "ipv6.disable=1" ];
+  # boot.kernel.sysctl."net.ipv6.conf.all.disable_ipv6" = true;
   networking.nameservers = [
+    "2001:4860:4860::8888"
+    "2001:4860:4860::8844"
     "8.8.8.8"
     "8.8.4.4"
   ];
