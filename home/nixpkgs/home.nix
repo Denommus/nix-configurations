@@ -47,6 +47,7 @@ in
     libreoffice
     zip
     unzip
+    corefonts
   ];
 
   programs.zsh = {
