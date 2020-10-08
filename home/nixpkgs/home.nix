@@ -44,6 +44,9 @@ in
     kdeApplications.spectacle
     vlc
     obs-studio
+    libreoffice
+    zip
+    unzip
   ];
 
   programs.zsh = {
