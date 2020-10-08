@@ -82,4 +82,61 @@ in
   programs.zsh.shellAliases = {
     vim = "emacsclient -t ";
   };
+
+  programs.mu.enable = true;
+  programs.mbsync.enable = true;
+
+  accounts.email.maildirBasePath = ".Maildir";
+  accounts.email.accounts = {
+    ba = {
+      userName = "yurialbuquerque@brickabode.com";
+      address = "yurialbuquerque@brickabode.com";
+      gpg.key = "4F4DB1BE3862279F7E6971E4727A35C53FCE6775";
+      gpg.signByDefault = true;
+      imap.host = "imap.gmail.com";
+      mbsync = {
+        enable = true;
+        create = "both";
+        expunge = "both";
+        patterns = [ "*" "!\"[Gmail]/Spam\"" "!\"[Gmail]/Important\"" "!\"[Gmail]/Starred\"" ];
+        extraConfig.account.Timeout = 60;
+      };
+      folders = {
+        inbox = "INBOX";
+        trash = "[Gmail]/Trash";
+        sent = "[Gmail]/Sent Mail";
+        drafts = "[Gmail]/Drafts";
+      };
+      passwordCommand = "gpg --no-tty -qd ~/.authinfo.gpg | sed -n 's,^machine imap.gmail.com login yurialbuquerque@brickabode.com .*password \\\\([^ ]*\\\\).*,\\\\1,p'";
+      smtp.host = "smtp.gmail.com";
+      mu.enable = true;
+      realName = "Yuri Albuquerque";
+    };
+
+    personal = {
+      userName = "yuridenommus@gmail.com";
+      address = "yuridenommus@gmail.com";
+      gpg.key = "4F4DB1BE3862279F7E6971E4727A35C53FCE6775";
+      gpg.signByDefault = true;
+      imap.host = "imap.gmail.com";
+      mbsync = {
+        enable = true;
+        create = "both";
+        expunge = "both";
+        patterns = [ "*" "!\"[Gmail]/Spam\"" "!\"[Gmail]/Importante\"" "![Gmail]/Com estrela" ];
+        extraConfig.account.Timeout = 60;
+      };
+      folders = {
+        inbox = "INBOX";
+        trash = "[Gmail]/Lixeira";
+        sent = "[Gmail]/E-mails enviados";
+        drafts = "[Gmail]/Rascunhos";
+      };
+      passwordCommand = "gpg --no-tty -qd ~/.authinfo.gpg | sed -n 's,^machine imap.gmail.com login yuridenommus@gmail.com .*password \\\\([^ ]*\\\\).*,\\\\1,p'";
+      smtp.host = "smtp.gmail.com";
+      mu.enable = true;
+      realName = "Yuri Albuquerque";
+      primary = true;
+    };
+  };
 }
