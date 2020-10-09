@@ -432,5 +432,18 @@ in
       enable = true;
       init = "(add-hook 'haskell-mode-hook #'subword-mode)";
     };
+
+    mu4e = {
+      enable = true;
+      package = epkgs: null;
+      command = [ "mu4e" ];
+      diminish = [ "mu4e-mode" ];
+      after = [ "helm-mu" ];
+      config = builtins.readFile ./emacs-configs/mu4e.el;
+    };
+
+    helm-mu = {
+      enable = true;
+    };
   };
 }
