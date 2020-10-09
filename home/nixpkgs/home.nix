@@ -48,6 +48,7 @@ in
     zip
     unzip
     corefonts
+    google-chrome
   ];
 
   programs.zsh = {
