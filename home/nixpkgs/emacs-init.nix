@@ -272,12 +272,6 @@ in
       after = [ "org" ];
     };
 
-    # org-plus-contrib = {
-    #   enable = true;
-    #   after = [ "org" ];
-    #   package = emacsPackages: emacsPackages.org-plus-contrib;
-    # };
-
     # ox-taskjuggler = {
     #   enable = true;
     #   after = [ "org" "ox" ];
