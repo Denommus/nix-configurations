@@ -49,6 +49,7 @@ in
     unzip
     corefonts
     google-chrome
+    krita
   ];
 
   programs.firefox.enable = true;
