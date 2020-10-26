@@ -23,9 +23,9 @@
 (require 'cl-lib)
 (setq visible-bell 1)
 (setq backup-directory-alist
-      `((".*" . "~/.local/emacs/backups")))
+      `((".*" . "~/.local/emacs/backups/")))
 (setq auto-save-file-name-transforms
-      `((".*" "~/.local/emacs/autosaves")))
+      `((".*" "~/.local/emacs/autosaves/" t)))
 (tool-bar-mode 0)
 (menu-bar-mode 0)
 (scroll-bar-mode 0)
