@@ -188,4 +188,8 @@ in
   hardware.steam-hardware.enable = true;
 
   nixpkgs.config.firefox.enablePlasmaBrowserIntegration = true;
+
+  services.mysql.enable = true;
+  services.mysql.package = pkgs.mariadb;
+  services.mysql.bind = "0.0.0.0";
 }
