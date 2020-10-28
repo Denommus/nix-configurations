@@ -115,7 +115,7 @@ in
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.yuri = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "video" "audio" ];
+    extraGroups = [ "wheel" "networkmanager" "video" "audio" "vboxusers" ];
     shell = pkgs.zsh;
   };
 
@@ -192,4 +192,6 @@ in
   services.mysql.enable = true;
   services.mysql.package = pkgs.mariadb;
   services.mysql.bind = "0.0.0.0";
+
+  virtualisation.virtualbox.host.enable = true;
 }
