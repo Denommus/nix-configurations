@@ -1,3 +1,4 @@
+(package-initialize)
 (custom-set-variables
  '(inhibit-startup-screen t))
 (custom-set-faces
