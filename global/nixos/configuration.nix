@@ -194,4 +194,6 @@ in
   services.mysql.bind = "0.0.0.0";
 
   virtualisation.virtualbox.host.enable = true;
+
+  hardware.bluetooth.enable = true;
 }
