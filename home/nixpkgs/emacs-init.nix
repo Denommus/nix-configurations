@@ -439,5 +439,11 @@ in
     helm-mu = {
       enable = true;
     };
+
+    helm-bbdb = {
+      enable = true;
+      command = [ "helm-bbdb" ];
+      after = [ "helm" "bbdb" ];
+    };
   };
 }
