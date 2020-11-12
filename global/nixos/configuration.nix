@@ -146,6 +146,7 @@ in
   ];
   hardware.nvidia.prime = {
     offload.enable = true;
+    sync.allowExternalGpu = true;
     nvidiaBusId = "PCI:1:0:0";
     intelBusId = "PCI:0:2:0";
   };
