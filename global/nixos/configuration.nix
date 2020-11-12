@@ -26,7 +26,7 @@ in
   boot.supportedFilesystems = [ "ntfs" ];
 
   networking.hostName = "yuri-nixos"; # Define your hostname.
-  networking.enableIPv6 = false;
+  networking.enableIPv6 = true;
   # Disabling ipv6 on the kernel level
   # boot.kernelParams = [ "ipv6.disable=1" ];
   # boot.kernel.sysctl."net.ipv6.conf.all.disable_ipv6" = true;
