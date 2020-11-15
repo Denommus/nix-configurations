@@ -152,6 +152,7 @@ in
       enable = true;
       mode = [
         "\\.html?\\'"
+        "\\.tsx?\\'"
         "\\.phtml\\'"
         "\\.tpl\\.php\\'"
         "\\.php\\'"
