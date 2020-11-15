@@ -197,4 +197,11 @@ in
   virtualisation.virtualbox.host.enable = true;
 
   hardware.bluetooth.enable = true;
+
+  # Install the flakes edition
+  nix.package = pkgs.nixFlakes;
+  # Enable the nix 2.0 CLI and flakes support feature-flags
+  nix.extraOptions = ''
+    experimental-features = nix-command flakes
+  '';
 }
