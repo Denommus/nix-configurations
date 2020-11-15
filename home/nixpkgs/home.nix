@@ -50,6 +50,7 @@ in
     corefonts
     google-chrome
     krita
+    exercism
   ];
 
   programs.firefox.enable = true;
