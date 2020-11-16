@@ -51,6 +51,7 @@ in
     google-chrome
     krita
     exercism
+    texlive.combined.scheme-full
   ];
 
   programs.firefox.enable = true;
