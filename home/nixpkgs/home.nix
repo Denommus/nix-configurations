@@ -52,6 +52,7 @@ in
     krita
     exercism
     texlive.combined.scheme-full
+    rsync
   ];
 
   programs.firefox.enable = true;
@@ -64,6 +65,10 @@ in
     oh-my-zsh = {
       enable = true;
       theme = "mortalscumbag";
+      plugins = [
+        "git"
+        "rsync"
+      ];
     };
   };
 
