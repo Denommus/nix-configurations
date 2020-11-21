@@ -138,11 +138,14 @@ in
     intel-media-driver
     vaapiIntel
     vaapiVdpau
+    libva
     libvdpau-va-gl
   ];
   hardware.opengl.extraPackages32 = with pkgs.pkgsi686Linux; [
-    libva
     vaapiIntel
+    vaapiVdpau
+    libva
+    libvdpau-va-gl
   ];
   hardware.nvidia.prime = {
     offload.enable = true;
@@ -174,7 +177,6 @@ in
 
 
   services.xserver.videoDrivers = [ "nvidia" ];
-  services.xserver.dpi = 96;
 
   nix.autoOptimiseStore = true;
 
