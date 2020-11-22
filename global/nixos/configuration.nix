@@ -206,4 +206,6 @@ in
   nix.extraOptions = ''
     experimental-features = nix-command flakes
   '';
+
+  hardware.cpu.intel.updateMicrocode = true;
 }
