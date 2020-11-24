@@ -53,6 +53,7 @@ in
     exercism
     texlive.combined.scheme-full
     rsync
+    screenfetch
   ];
 
   programs.firefox.enable = true;
