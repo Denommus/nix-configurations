@@ -69,6 +69,8 @@ in
       plugins = [
         "git"
         "rsync"
+        "django"
+        "yarn"
       ];
     };
   };
