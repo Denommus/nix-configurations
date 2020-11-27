@@ -148,20 +148,27 @@ in
       '';
     };
 
+    typescript-mode = {
+      enable = true;
+      demand = true;
+      mode = [
+        "\"\\\\.tsx?\\\\'\""
+      ];
+    };
+
     web-mode = {
       enable = true;
       mode = [
-        "\\.html?\\'"
-        "\\.tsx?\\'"
-        "\\.phtml\\'"
-        "\\.tpl\\.php\\'"
-        "\\.php\\'"
-        "\\.jsp\\'"
-        "\\.as[cp]x\\'"
-        "\\.erb\\'"
-        "\\.mustache\\'"
-        "\\.djhtml\\'"
-        "\\.razor\\'"
+        "\"\\\\.html?\\\\'\""
+        "\"\\\\.phtml\\\\'\""
+        "\"\\\\.tpl\\.php\\\\'\""
+        "\"\\\\.php\\\\'\""
+        "\"\\\\.jsp\\\\'\""
+        "\"\\\\.as[cp]x\\\\'\""
+        "\"\\\\.erb\\\\'\""
+        "\"\\\\.mustache\\\\'\""
+        "\"\\\\.djhtml\\\\'\""
+        "\"\\\\.razor\\\\'\""
       ];
       init = builtins.readFile ./emacs-inits/web-mode.el;
     };
