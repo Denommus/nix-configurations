@@ -335,9 +335,6 @@ in
 
     nix-mode = {
       enable = true;
-      mode = [
-        "\\.nix\\'"
-      ];
     };
 
     nixos-options = {
