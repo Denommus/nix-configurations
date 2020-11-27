@@ -63,10 +63,6 @@ in
   console.useXkbConfig = true;
   # Select internationalisation properties.
   i18n.defaultLocale = "pt_BR.UTF-8";
-  # console = {
-  #   font = "Lat2-Terminus16";
-  #   keyMap = "us";
-  # };
 
   # Set your time zone.
   time.timeZone = "America/Sao_Paulo";

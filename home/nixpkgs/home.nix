@@ -21,9 +21,9 @@ in
   # changes in each release.
   home.stateVersion = "20.03";
 
-  home.sessionVariables = {
-    EDITOR = "emacsclient";
-  };
+  home.sessionVariablesExtra = ''
+    export EDITOR=emacsclient
+  '';
 
   home.packages = with pkgs; [
     keepassxc
