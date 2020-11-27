@@ -1,11 +1,8 @@
 * My NixOS configuration
 
-** Disclaimer
-
-   This is probably not fit for intellectual property rights, because
-   as of now it's too simple. But I'll probably have my own custom
-   packages in the future here, so just in case I'm adding a MIT
-   license.
+  [[https://nixos.org/][NixOS]] is an awesome Linux distribution that I'm using in my home
+  machine with success. These files are my configuration for it, and
+  it installs and configures all my applications and services.
 
 ** Using it
 
