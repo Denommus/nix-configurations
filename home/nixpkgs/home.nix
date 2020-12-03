@@ -54,6 +54,7 @@ in
     texlive.combined.scheme-full
     rsync
     screenfetch
+    postman
   ];
 
   programs.firefox.enable = true;
