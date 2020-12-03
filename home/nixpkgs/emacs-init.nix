@@ -450,5 +450,9 @@ in
       command = [ "helm-bbdb" ];
       after = [ "helm" "bbdb" ];
     };
+
+    yaml-mode = {
+      enable = true;
+    };
   };
 }
