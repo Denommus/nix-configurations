@@ -454,5 +454,12 @@ in
     yaml-mode = {
       enable = true;
     };
+
+    gherkin-mode = {
+      enable = true;
+      mode = [
+        "\"\\\\.feature\\\\'\""
+      ];
+    };
   };
 }
