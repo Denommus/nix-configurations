@@ -111,7 +111,14 @@ in
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.yuri = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "video" "audio" "vboxusers" ];
+    extraGroups = [
+      "wheel"
+      "networkmanager"
+      "video"
+      "audio"
+      "vboxusers"
+      "adbusers"
+    ];
     shell = pkgs.zsh;
   };
 
@@ -204,4 +211,7 @@ in
   '';
 
   hardware.cpu.intel.updateMicrocode = true;
+
+  programs.adb.enable = true;
+  nixpkgs.config.android_sdk.accept_license = true;
 }
