@@ -55,6 +55,7 @@ in
     rsync
     screenfetch
     postman
+    usbutils
   ];
 
   programs.firefox.enable = true;
