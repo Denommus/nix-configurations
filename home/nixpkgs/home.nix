@@ -56,9 +56,8 @@ in
     screenfetch
     postman
     usbutils
+    firefox-bin
   ];
-
-  programs.firefox.enable = true;
 
   programs.zsh = {
     enable = true;
