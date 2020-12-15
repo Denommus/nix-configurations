@@ -57,6 +57,7 @@ in
     postman
     usbutils
     firefox-bin
+    python3.pkgs.pygments
   ];
 
   programs.zsh = {
