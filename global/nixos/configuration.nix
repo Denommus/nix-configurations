@@ -137,6 +137,7 @@ in
 
   hardware.opengl.driSupport32Bit = true;
   hardware.opengl.enable = true;
+  hardware.opengl.setLdLibraryPath = true;
   hardware.opengl.extraPackages = with pkgs; [
     intel-media-driver
     vaapiIntel
