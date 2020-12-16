@@ -42,6 +42,7 @@ in
     cloc
     kdeApplications.gwenview
     kdeApplications.spectacle
+    kdeApplications.ark
     vlc
     obs-studio
     libreoffice
