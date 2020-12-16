@@ -59,6 +59,7 @@ in
     usbutils
     firefox-bin
     python3.pkgs.pygments
+    dosbox
   ];
 
   programs.zsh = {
