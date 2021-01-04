@@ -60,6 +60,7 @@ in
     firefox-bin
     python3.pkgs.pygments
     dosbox
+    wine
   ];
 
   programs.zsh = {
