@@ -461,5 +461,9 @@ in
         "\"\\\\.feature\\\\'\""
       ];
     };
+
+    csharp-mode = {
+      enable = true;
+    };
   };
 }
