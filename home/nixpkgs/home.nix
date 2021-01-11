@@ -61,6 +61,7 @@ in
     python3.pkgs.pygments
     dosbox
     wine
+    skypeforlinux
   ];
 
   programs.zsh = {
