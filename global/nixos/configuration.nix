@@ -53,7 +53,7 @@ in
   environment.systemPackages = with pkgs; [
     emacs
     mu
-    git
+    gitFull
     pciutils
     glxinfo
     nvidia-offload
