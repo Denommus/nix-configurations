@@ -62,6 +62,7 @@ in
     dosbox
     wine
     skypeforlinux
+    mpc_cli
   ];
 
   programs.zsh = {
@@ -159,5 +160,11 @@ in
       realName = "Yuri Albuquerque";
       primary = true;
     };
+  };
+
+  services.mpd = {
+    enable = true;
+    musicDirectory = "/home/yuri/Músicas";
+    network.startWhenNeeded = true;
   };
 }
