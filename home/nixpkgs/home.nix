@@ -40,9 +40,9 @@ in
     python3
     okular
     cloc
-    kdeApplications.gwenview
-    kdeApplications.spectacle
-    kdeApplications.ark
+    gwenview
+    spectacle
+    ark
     vlc
     obs-studio
     libreoffice
