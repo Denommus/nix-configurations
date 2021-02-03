@@ -90,6 +90,7 @@ in
     userName = "Yuri Albuquerque";
     extraConfig = {
       pull.ff = "only";
+      init.defaultBranch = "main";
     };
   };
 
