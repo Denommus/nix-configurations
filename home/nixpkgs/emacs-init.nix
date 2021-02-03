@@ -465,9 +465,5 @@ in
     csharp-mode = {
       enable = true;
     };
-
-    auctex = {
-      enable = true;
-    };
   };
 }
