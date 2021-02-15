@@ -63,6 +63,7 @@ in
     wine
     skypeforlinux
     mpc_cli
+    adoptopenjdk-jre-bin
   ];
 
   programs.zsh = {

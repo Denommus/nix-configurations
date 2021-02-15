@@ -345,6 +345,15 @@ in
       enable = true;
     };
 
+    plantuml-mode = {
+      enable = true;
+      init = ''
+      (setq plantuml-jar-path "${pkgs.plantuml}/lib/plantuml.jar")
+      (setq plantuml-executable-path "${pkgs.plantuml}/bin/plantuml")
+      (setq plantuml-exec-mode 'executable)
+      '';
+    };
+
     company = {
       enable = true;
       demand = true;
