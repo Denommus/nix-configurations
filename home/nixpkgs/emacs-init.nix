@@ -150,7 +150,7 @@ in
 
     typescript-mode = {
       enable = true;
-      demand = true;
+      defer = true;
       mode = [
         "\"\\\\.tsx?\\\\'\""
       ];
@@ -158,6 +158,7 @@ in
 
     web-mode = {
       enable = true;
+      defer = true;
       mode = [
         "\"\\\\.html?\\\\'\""
         "\"\\\\.phtml\\\\'\""
@@ -221,6 +222,7 @@ in
 
     cmake-mode = {
       enable = true;
+      defer = true;
     };
 
     cyberpunk-theme = {
@@ -306,6 +308,7 @@ in
 
     dune = {
       enable = true;
+      defer = true;
       after = [ "smartparens" ];
       hook = [ "(dune-mode . enable-smartparens-mode)" ];
     };
@@ -347,6 +350,7 @@ in
 
     plantuml-mode = {
       enable = true;
+      defer = true;
       init = ''
       (setq plantuml-jar-path "${pkgs.plantuml}/lib/plantuml.jar")
       (setq plantuml-executable-path "${pkgs.plantuml}/bin/plantuml")
@@ -409,12 +413,14 @@ in
     reason-mode = {
       enable = true;
       after = [ "lsp-mode" "nix-sandbox" ];
+      defer = true;
       init = builtins.readFile ./emacs-inits/reason-mode.el;
     };
 
     tuareg = {
       enable = true;
       after = [ "lsp-mode" "nix-sandbox" "reason-mode" ];
+      defer = true;
       init = builtins.readFile ./emacs-inits/tuareg.el;
     };
 
@@ -438,6 +444,7 @@ in
 
     haskell-mode = {
       enable = true;
+      defer = true;
       init = "(add-hook 'haskell-mode-hook #'subword-mode)";
     };
 
@@ -462,10 +469,12 @@ in
 
     yaml-mode = {
       enable = true;
+      defer = true;
     };
 
     gherkin-mode = {
       enable = true;
+      defer = true;
       mode = [
         "\"\\\\.feature\\\\'\""
       ];
@@ -473,6 +482,7 @@ in
 
     csharp-mode = {
       enable = true;
+      defer = true;
     };
 
     fsharp-mode = {
