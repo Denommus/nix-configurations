@@ -474,5 +474,15 @@ in
     csharp-mode = {
       enable = true;
     };
+
+    fsharp-mode = {
+      enable = true;
+      defer = true;
+      package = epkgs: epkgs.melpaPackages.fsharp-mode.overrideAttrs (old: {
+        postPatch = ''
+        substituteInPlace fsharp-mode.el --replace "-when-let" "when-let"
+        '';
+      });
+    };
   };
 }
