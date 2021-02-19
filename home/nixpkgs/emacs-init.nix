@@ -494,5 +494,9 @@ in
         '';
       });
     };
+
+    rust-mode = {
+      enable = true;
+    };
   };
 }
