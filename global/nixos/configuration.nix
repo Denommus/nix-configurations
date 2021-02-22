@@ -203,6 +203,10 @@ in
   virtualisation.virtualbox.host.enable = true;
 
   hardware.bluetooth.enable = true;
+  systemd.services.bluetooth.serviceConfig.ExecStart = [
+    ""
+    "${pkgs.bluez}/libexec/bluetooth/bluetoothd -f /etc/bluetooth/main.conf"
+  ];
 
   # Install the flakes edition
   nix.package = pkgs.nixFlakes;
