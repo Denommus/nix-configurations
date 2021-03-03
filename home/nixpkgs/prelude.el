@@ -9,6 +9,7 @@
  '(default ((t (:height 110 :family "Anonymous Pro"))))
  '(font-lock-comment-face ((t (:foreground "#B7B7B7")))))
 (setq history-delete-duplicates t)
+(setq create-lockfiles nil)
 (setq desktop-path '("~/.local/emacs/sessions"))
 (put 'downcase-region 'disabled nil)
 (put 'narrow-to-region 'disabled nil)
