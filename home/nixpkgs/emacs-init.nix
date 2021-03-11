@@ -318,7 +318,7 @@ in
       command = [
         "editorconfig-mode"
       ];
-      config = "(editorconfig-mode 1)";
+      init = "(editorconfig-mode 1)";
     };
 
     helm-flyspell = {
