@@ -498,5 +498,9 @@ in
     rust-mode = {
       enable = true;
     };
+
+    dockerfile-mode = {
+      enable = true;
+    };
   };
 }
