@@ -122,6 +122,7 @@ in
       "audio"
       "vboxusers"
       "adbusers"
+      "docker"
     ];
     shell = pkgs.zsh;
   };
@@ -205,6 +206,7 @@ in
   services.mysql.bind = "0.0.0.0";
 
   virtualisation.virtualbox.host.enable = true;
+  virtualisation.docker.enable = true;
 
   hardware.bluetooth.enable = true;
   systemd.services.bluetooth.serviceConfig.ExecStart = [
