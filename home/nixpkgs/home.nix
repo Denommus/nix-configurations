@@ -55,7 +55,6 @@ in
     texlive.combined.scheme-full
     rsync
     screenfetch
-    postman
     usbutils
     firefox-bin
     python3.pkgs.pygments
