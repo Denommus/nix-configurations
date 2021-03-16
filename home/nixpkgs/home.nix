@@ -63,6 +63,7 @@ in
     skypeforlinux
     mpc_cli
     adoptopenjdk-jre-bin
+    docker-compose
   ];
 
   programs.zsh = {
