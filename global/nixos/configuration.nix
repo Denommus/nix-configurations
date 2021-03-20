@@ -65,7 +65,11 @@ in
   i18n.defaultLocale = "pt_BR.UTF-8";
   i18n.inputMethod = {
     enabled = "fcitx";
-    fcitx.engines = with pkgs.fcitx-engines; [ libpinyin ];
+    fcitx.engines = with pkgs.fcitx-engines; [
+      libpinyin
+      mozc
+      skk
+    ];
   };
 
   # Set your time zone.
