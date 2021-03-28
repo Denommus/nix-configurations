@@ -64,6 +64,7 @@ in
     mpc_cli
     adoptopenjdk-jre-bin
     docker-compose
+    remmina
   ];
 
   programs.zsh = {
