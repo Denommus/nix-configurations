@@ -201,7 +201,7 @@ in
     }
   ];
 
-  hardware.steam-hardware.enable = true;
+  programs.steam.enable = true;
 
   nixpkgs.config.firefox.enablePlasmaBrowserIntegration = true;
 

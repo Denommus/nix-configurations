@@ -29,7 +29,6 @@ in
     keepassxc
     tdesktop
     spotify
-    steam
     rustup
     discord
     signal-desktop
