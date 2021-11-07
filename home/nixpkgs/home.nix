@@ -168,4 +168,17 @@ in
     musicDirectory = "/home/yuri/Músicas";
     network.startWhenNeeded = true;
   };
+
+  # Opens steam with nvidia-offload
+  xdg.desktopEntries.steam = {
+    name = "steam";
+    exec = "nvidia-offload steam %U";
+    extraConfig = builtins.readFile ./steam/steam.desktop;
+    terminal = false;
+    icon = "steam";
+    type = "Application";
+    categories = [ "Network" "FileTransfer" "Game" ];
+    mimeType = [ "x-scheme-handler/steam" "x-scheme-handler/steamlink" ];
+    comment = "Application for managing and playing games on Steam";
+  };
 }
