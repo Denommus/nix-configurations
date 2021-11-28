@@ -64,6 +64,7 @@ in
     adoptopenjdk-jre-bin
     docker-compose
     remmina
+    anki
   ];
 
   programs.zsh = {
