@@ -58,7 +58,6 @@ in
     firefox-bin
     python3.pkgs.pygments
     dosbox
-    wine
     skypeforlinux
     mpc_cli
     adoptopenjdk-jre-bin
@@ -66,6 +65,7 @@ in
     remmina
     anki-bin
     mplayer
+    protontricks
   ];
 
   programs.zsh = {
