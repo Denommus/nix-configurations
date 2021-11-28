@@ -65,6 +65,7 @@ in
     docker-compose
     remmina
     anki-bin
+    mplayer
   ];
 
   programs.zsh = {
