@@ -203,6 +203,7 @@ in
   ];
 
   programs.steam.enable = true;
+  programs.kdeconnect.enable = true;
 
   nixpkgs.config.firefox.enablePlasmaBrowserIntegration = true;
 
