@@ -66,6 +66,7 @@ in
     anki-bin
     mplayer
     protontricks
+    dolphin-emu-beta
   ];
 
   programs.zsh = {
