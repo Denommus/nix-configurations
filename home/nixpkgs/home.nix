@@ -26,6 +26,7 @@ in
   '';
 
   home.packages = with pkgs; [
+    octaveFull
     keepassxc
     tdesktop
     spotify
