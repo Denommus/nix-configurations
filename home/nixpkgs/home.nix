@@ -68,6 +68,7 @@ in
     mplayer
     protontricks
     dolphin-emu-beta
+    slack
   ];
 
   programs.zsh = {
