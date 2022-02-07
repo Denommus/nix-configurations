@@ -69,6 +69,7 @@ in
     protontricks
     dolphin-emu-beta
     slack
+    zoom-us
   ];
 
   programs.zsh = {
