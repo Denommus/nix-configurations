@@ -1,6 +1,14 @@
 { config, pkgs, ... }:
 let myAspell = pkgs.aspellWithDicts (d: [d.en d.pt_BR]);
     nur-no-pkgs = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {};
+    gopanda2 = pkgs.appimageTools.wrapType2 {
+      name = "gopanda2";
+      src = pkgs.fetchurl {
+        url = "https://pandanet-igs.com/gopanda2/download/GoPanda2.AppImage";
+        sha256 = "sha256-D6p+aICkolqazYFRTK6f4753Te2IscT8y8o/JLRCdUM=";
+      };
+      extraPkgs = extra: with extra; [];
+    };
 in
 {
 
@@ -70,6 +78,7 @@ in
     dolphin-emu-beta
     slack
     zoom-us
+    gopanda2
   ];
 
   programs.zsh = {
