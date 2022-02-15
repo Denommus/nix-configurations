@@ -71,7 +71,6 @@ in
     mpc_cli
     adoptopenjdk-jre-bin
     docker-compose
-    remmina
     anki-bin
     mplayer
     protontricks
