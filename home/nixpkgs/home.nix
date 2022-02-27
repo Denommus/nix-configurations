@@ -78,6 +78,7 @@ in
     slack
     zoom-us
     gopanda2
+    wineWowPackages.staging
   ];
 
   programs.zsh = {
