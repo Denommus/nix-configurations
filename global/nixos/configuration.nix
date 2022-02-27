@@ -227,4 +227,14 @@ in
 
   programs.adb.enable = true;
   nixpkgs.config.android_sdk.accept_license = true;
+
+  fonts = {
+    enableDefaultFonts = true;
+    fonts = with pkgs; [
+      ubuntu_font_family
+      wqy_microhei
+      wqy_zenhei
+      ttf-tw-moe
+    ];
+  };
 }
