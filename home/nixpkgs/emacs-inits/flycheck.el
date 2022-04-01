@@ -2,4 +2,7 @@
 (setq flycheck-command-wrapper-function
       (lambda (cmd)
         (apply 'nix-shell-command (nix-current-sandbox)
-               (list (mapconcat 'shell-quote-argument cmd " ")))))
+               cmd)))
+(setq flycheck-executable-find
+      (lambda (executable)
+        (nix-executable-find (nix-current-sandbox) executable)))

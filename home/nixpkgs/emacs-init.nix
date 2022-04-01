@@ -97,6 +97,14 @@ in
         "nix-executable-find"
         "nix-shell-command"
       ];
+      package = (epkgs: epkgs.nix-sandbox.overrideAttrs (old: {
+        patches = (old.patches or []) ++ [
+          (pkgs.fetchpatch {
+            url = "https://github.com/Denommus/nix-emacs/commit/b9ede59ef53a8b95ab50b01415e054dfe4f35d22.patch";
+            sha256 = "sha256-obe6DFLS6c2iGI1PW0NMQKTZKifmlRqFgZAJuVltJlM=";
+          })
+        ];
+      }));
     };
 
     nix-buffer = {
@@ -497,6 +505,7 @@ in
 
     rust-mode = {
       enable = true;
+      after = [ "nix-sandbox" ];
     };
 
     dockerfile-mode = {
