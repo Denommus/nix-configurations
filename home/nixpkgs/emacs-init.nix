@@ -100,8 +100,8 @@ in
       package = (epkgs: epkgs.nix-sandbox.overrideAttrs (old: {
         patches = (old.patches or []) ++ [
           (pkgs.fetchpatch {
-            url = "https://github.com/Denommus/nix-emacs/commit/b9ede59ef53a8b95ab50b01415e054dfe4f35d22.patch";
-            sha256 = "sha256-obe6DFLS6c2iGI1PW0NMQKTZKifmlRqFgZAJuVltJlM=";
+            url = "https://github.com/Denommus/nix-emacs/commit/8b27194030601e166851a3458a970feca3c49553.patch";
+            sha256 = "sha256-ai/fIAF8glZ4ND2ubG6z3seP9c5G5HhCRgLMr30AnH0=";
           })
         ];
       }));
