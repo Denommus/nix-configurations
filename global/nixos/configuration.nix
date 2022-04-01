@@ -153,12 +153,14 @@ in
     vaapiVdpau
     libva
     libvdpau-va-gl
+    (lib.hiPrio nvidia-vaapi-driver)
   ];
   hardware.opengl.extraPackages32 = with pkgs.pkgsi686Linux; [
     vaapiIntel
     vaapiVdpau
     libva
     libvdpau-va-gl
+    (lib.hiPrio nvidia-vaapi-driver)
   ];
   hardware.nvidia.prime = {
     offload.enable = true;
