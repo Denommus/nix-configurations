@@ -17,7 +17,7 @@ in
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  #programs.emacs.init = import ./emacs-init.nix { inherit pkgs; };
+  programs.emacs.init = import ./emacs-init.nix { inherit pkgs; };
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
@@ -39,6 +39,7 @@ in
     tdesktop
     spotify
     rustup
+    rust-analyzer
     discord
     signal-desktop
     nodejs

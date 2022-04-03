@@ -8,7 +8,13 @@
     #home-manager.inputs.nur.follows = "nur";
   };
 
-  outputs = inputs: {
+  outputs = inputs: let nur-no-pkgs = import inputs.nur {
+    pkgs = null;
+    nurpkgs = import inputs.nixpkgs {
+      system = "x86_64-linux";
+    };
+  };
+  in {
     nixosConfigurations.yuri-nixos = inputs.nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
@@ -20,7 +26,12 @@
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
-            users.yuri = import ./yuri/home.nix;
+            users.yuri = {
+	      imports = [
+	        ./yuri/home.nix
+		nur-no-pkgs.repos.rycee.hmModules.emacs-init
+	      ];
+	    };
           };
         })
       ];
