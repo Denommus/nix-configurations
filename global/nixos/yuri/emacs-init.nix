@@ -394,6 +394,7 @@ in
       enable = true;
       command = [
         "lsp"
+        "sandboxed-rust-lsp"
       ];
       bindLocal = {
         lsp-mode-map = {
@@ -406,7 +407,7 @@ in
               "M-." = "xref-find-definitions";
         };
       };
-      init = "(setq lsp-prefer-flymake nil)";
+      init = builtins.readFile ./emacs-inits/lsp.el;
     };
 
     lsp-ui = {
@@ -505,7 +506,8 @@ in
 
     rust-mode = {
       enable = true;
-      after = [ "nix-sandbox" ];
+      after = [ "nix-sandbox" "lsp-mode" ];
+      init = builtins.readFile ./emacs-inits/rust-mode.el;
     };
 
     dockerfile-mode = {

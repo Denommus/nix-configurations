@@ -6,14 +6,13 @@
 
 ** Using it
 
-   You probably need to replace my ~hardware-config.nix~ with your
-   own.
+   You probably need to replace my ~hardware-config.nix~ with your own
+   and adjust the ~configuration.nix~ to use your own video drivers.
 
-   After that you need to create two symlinks:
+   After that you need to create one symlink:
 
    #+begin_src sh
      sudo rm -rf /etc/nixos && sudo ln -s $PWD/global/nixos /etc/
-     rm -rf $HOME/.config/nixpkgs && ln -s $PWD/home/nixpkgs $HOME/.config/
    #+end_src
 
    Then you can run:

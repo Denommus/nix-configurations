@@ -1,4 +1,4 @@
 #!/bin/sh
 
-sudo nix-channel --update && nix-channel --update
-sudo nixos-rebuild switch && home-manager switch
+rm global/nixos/flake.lock
+sudo nixos-rebuild switch

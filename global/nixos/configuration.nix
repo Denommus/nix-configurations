@@ -134,8 +134,6 @@ in
   programs.zsh.enable = true;
   environment.pathsToLink = [ "/share/zsh" ];
 
-  nixpkgs.config.allowUnfree = true;
-
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
@@ -218,17 +216,12 @@ in
     "${pkgs.bluez}/libexec/bluetooth/bluetoothd -f /etc/bluetooth/main.conf"
   ];
 
-  # Install the flakes edition
-  nix.package = pkgs.nixFlakes;
-  # Enable the nix 2.0 CLI and flakes support feature-flags
-  nix.extraOptions = ''
-    experimental-features = nix-command flakes
-  '';
-
   hardware.cpu.intel.updateMicrocode = true;
 
   programs.adb.enable = true;
   nixpkgs.config.android_sdk.accept_license = true;
+
+  nixpkgs.config.allowUnfree = true;
 
   fonts = {
     enableDefaultFonts = true;
@@ -238,5 +231,12 @@ in
       wqy_zenhei
       ttf-tw-moe
     ];
+  };
+
+  nix = {
+    package = pkgs.nixFlakes;
+    extraOptions = ''
+    experimental-features = nix-command flakes
+    '';
   };
 }
