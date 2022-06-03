@@ -1,16 +1,18 @@
 { config, pkgs, ... }:
-let myAspell = pkgs.aspellWithDicts (d: [d.en d.pt_BR]);
-    gopanda2 = pkgs.appimageTools.wrapType2 {
-      name = "gopanda2";
-      src = pkgs.fetchurl {
-        url = "https://pandanet-igs.com/gopanda2/download/GoPanda2.AppImage";
-        sha256 = "sha256-D6p+aICkolqazYFRTK6f4753Te2IscT8y8o/JLRCdUM=";
-      };
-      extraPkgs = extra: with extra; [];
+let
+  myAspell = pkgs.aspellWithDicts (d: [d.en d.pt_BR]);
+  gopanda2 = pkgs.appimageTools.wrapType2 {
+    name = "gopanda2";
+    src = pkgs.fetchurl {
+      url = "https://pandanet-igs.com/gopanda2/download/GoPanda2.AppImage";
+      sha256 = "sha256-D6p+aICkolqazYFRTK6f4753Te2IscT8y8o/JLRCdUM=";
     };
+    extraPkgs = extra: with extra; [];
+  };
+  shared = import ../../shared/home.nix { inherit pkgs; };
 in
 {
-  programs.emacs.init = import ../../shared/emacs/emacs.nix { inherit pkgs; };
+  services.emacs.enable = true;
 
   home.sessionVariablesExtra = ''
     export EDITOR=emacsclient
@@ -65,41 +67,7 @@ in
     wineWowPackages.staging
   ];
 
-  programs.zsh = {
-    enable = true;
-    enableAutosuggestions = true;
-    enableCompletion = true;
-    history.extended = true;
-    oh-my-zsh = {
-      enable = true;
-      theme = "mortalscumbag";
-      plugins = [
-        "git"
-        "rsync"
-        "yarn"
-      ];
-    };
-  };
-
-  programs.git = {
-    enable = true;
-    ignores = [ "*~" ];
-    lfs.enable = true;
-    userEmail = "yuridenommus@gmail.com";
-    userName = "Yuri Albuquerque";
-    extraConfig = {
-      pull.ff = "only";
-      init.defaultBranch = "main";
-    };
-  };
-
-  programs.emacs.enable = true;
-
-  services.emacs.enable = true;
-  services.emacs.client.enable = true;
-
   services.dropbox.enable = true;
-
 
   programs.zsh.shellAliases = {
     vim = "emacsclient -t ";
@@ -188,4 +156,4 @@ in
   };
 
   nixpkgs.config.allowUnfree = true;
-}
+} // shared
