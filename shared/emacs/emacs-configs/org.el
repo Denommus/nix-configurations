@@ -7,7 +7,6 @@
 (add-hook 'org-mode-hook #'deactivate-c-tab)
 (add-hook 'org-mode-hook #'auto-fill-mode)
 (add-hook 'org-mode-hook #'(lambda () (flyspell-mode 1)))
-(require 'org-mu4e)
 ;(require 'org-ref)
 (require 'org-tempo)
 ;; FIXME: 

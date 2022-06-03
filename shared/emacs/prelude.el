@@ -6,7 +6,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:height 110 :family "Anonymous Pro"))))
+ '(default ((t (:height 110 :family "Fira Code"))))
  '(font-lock-comment-face ((t (:foreground "#B7B7B7")))))
 (setq history-delete-duplicates t)
 (setq create-lockfiles nil)
@@ -145,3 +145,17 @@
 (winner-mode 1)
 (global-set-key (kbd "C-c f") #'winner-redo)
 (global-set-key (kbd "C-c b") #'winner-undo)
+
+(put 'nix-flake 'safe-local-variable (lambda (x) t))
+(put 'nix-file 'safe-local-variable (lambda (x) t))
+
+
+(defun nix-rust-sandbox-setup ()
+  (message "nix-flake %S" nix-flake)
+  (make-local-variable 'lsp-rust-rls-server-command)
+  (setq lsp-rust-rls-server-command (nix-shell-command (nix-current-sandbox) "rls"))
+  (make-local-variable 'lsp-rust-analyzer-server-command)
+  (setq lsp-rust-analyzer-server-command (nix-shell-command (nix-current-sandbox) "rust-analyzer"))
+  (setq lsp-rust-analyzer-proc-macro-enable t)
+  (lsp))
+

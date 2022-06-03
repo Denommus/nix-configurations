@@ -37,7 +37,6 @@ in
       command = [
         "helm-mode"
       ];
-      init = builtins.readFile ./emacs-inits/helm.el;
       bind = {
         "C-c h" = "helm-command-prefix";
         "M-x" = "helm-M-x";
@@ -97,11 +96,12 @@ in
         "nix-executable-find"
         "nix-shell-command"
       ];
+      after = [ "nix-mode" ];
       package = (epkgs: epkgs.nix-sandbox.overrideAttrs (old: {
         patches = (old.patches or []) ++ [
           (pkgs.fetchpatch {
-            url = "https://github.com/Denommus/nix-emacs/commit/8b27194030601e166851a3458a970feca3c49553.patch";
-            sha256 = "sha256-ai/fIAF8glZ4ND2ubG6z3seP9c5G5HhCRgLMr30AnH0=";
+            url = "https://github.com/Denommus/nix-emacs/commit/0d168c54bf18f994be83f76ea1ed75efbfb18415.patch";
+            sha256 = "sha256-4SMZOpDJzE3982OinI6P6WB0KpftDwdc8GiJUCn/bKM=";
           })
         ];
       }));
@@ -220,6 +220,7 @@ in
 
     magit-svn = {
       enable = true;
+      command = [ "magit-svn-mode" ];
       after = [ "magit" ];
     };
 
@@ -274,27 +275,10 @@ in
       config = "(add-hook 'org-mode-hook #'org-bullets-mode)";
     };
 
-    org-gcal = {
-      enable = true;
-      after = [ "org" ];
-      command = [
-        "org-gcal-fetch"
-        "org-gcal-post-at-point"
-        "setup-org-gcal"
-      ];
-      config = builtins.readFile ./emacs-configs/org-gcal.el;
-    };
-
     ox = {
       enable = true;
       after = [ "org" ];
     };
-
-    # ox-taskjuggler = {
-    #   enable = true;
-    #   after = [ "org" "ox" ];
-    #   init = "(add-to-list 'org-export-backends 'taskjuggler)";
-    # };
 
     org-ref = {
       enable = true;
@@ -346,6 +330,7 @@ in
 
     nix-mode = {
       enable = true;
+      demand = true;
     };
 
     nixos-options = {
@@ -394,7 +379,6 @@ in
       enable = true;
       command = [
         "lsp"
-        "sandboxed-rust-lsp"
       ];
       bindLocal = {
         lsp-mode-map = {
@@ -408,6 +392,11 @@ in
         };
       };
       init = builtins.readFile ./emacs-inits/lsp.el;
+    };
+
+    lsp-haskell = {
+      enable = true;
+      after = [ "lsp-mode" ];
     };
 
     lsp-ui = {
@@ -447,6 +436,8 @@ in
       bind = {
         "<C-tab>" = "eyebrowse-next-window-config";
         "<C-iso-lefttab>" = "eyebrowse-prev-window-config";
+        "<C-s-tab>" = "eyebrowse-prev-window-config";
+        "C-S-<tab>" = "eyebrowse-prev-window-config";
       };
       init = builtins.readFile ./emacs-inits/eyebrowse.el;
     };
@@ -454,20 +445,8 @@ in
     haskell-mode = {
       enable = true;
       defer = true;
-      init = "(add-hook 'haskell-mode-hook #'subword-mode)";
-    };
-
-    mu4e = {
-      enable = true;
-      package = epkgs: null;
-      command = [ "mu4e" ];
-      diminish = [ "mu4e-mode" ];
-      after = [ "helm-mu" ];
-      config = builtins.readFile ./emacs-configs/mu4e.el;
-    };
-
-    helm-mu = {
-      enable = true;
+      after = [ "lsp-haskell" "nix-sandbox" ];
+      init = builtins.readFile ./emacs-inits/haskell-mode.el;
     };
 
     helm-bbdb = {
@@ -506,12 +485,42 @@ in
 
     rust-mode = {
       enable = true;
-      after = [ "nix-sandbox" "lsp-mode" ];
-      init = builtins.readFile ./emacs-inits/rust-mode.el;
+      after = [ "nix-sandbox" "lsp-mode" "nix-mode" ];
+      command = [ "nix-rust-sandbox-setup" ];
+      hook = [
+        "(rust-mode . nix-rust-sandbox-setup)"
+      ];
+    };
+
+    exec-path-from-shell = {
+      enable = pkgs.stdenv.isDarwin;
+      config = builtins.readFile ./emacs-configs/exec-path-from-shell.el;
     };
 
     dockerfile-mode = {
       enable = true;
+    };
+
+    term = {
+      enable = true;
+      bind = {
+        "s-v" = "term-paste";
+      };
+    };
+
+    string-inflection = {
+      enable = true;
+      demand = true;
+      bind = {
+        "C-c C" = "string-inflection-camelcase";
+        "C-c L" = "string-inflection-lower-camelcase";
+      };
+    };
+
+    fira-code-mode = {
+      enable = true;
+      demand = true;
+      init = "(global-fira-code-mode)";
     };
   };
 }

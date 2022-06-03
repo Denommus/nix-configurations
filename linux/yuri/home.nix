@@ -1,6 +1,5 @@
 { config, pkgs, ... }:
 let myAspell = pkgs.aspellWithDicts (d: [d.en d.pt_BR]);
-    #nur-no-pkgs = import pkgs.nur { pkgs = null; };
     gopanda2 = pkgs.appimageTools.wrapType2 {
       name = "gopanda2";
       src = pkgs.fetchurl {
@@ -11,23 +10,7 @@ let myAspell = pkgs.aspellWithDicts (d: [d.en d.pt_BR]);
     };
 in
 {
-
-  #imports = [ nur-no-pkgs.repos.rycee.hmModules.emacs-init ];
-
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
-
-  programs.emacs.init = import ./emacs-init.nix { inherit pkgs; };
-
-  # This value determines the Home Manager release that your
-  # configuration is compatible with. This helps avoid breakage
-  # when a new Home Manager release introduces backwards
-  # incompatible changes.
-  #
-  # You can update Home Manager without changing this value. See
-  # the Home Manager release notes for a list of state version
-  # changes in each release.
-  # home.stateVersion = "20.03";
+  programs.emacs.init = import ../../shared/emacs/emacs.nix { inherit pkgs; };
 
   home.sessionVariablesExtra = ''
     export EDITOR=emacsclient
@@ -127,31 +110,6 @@ in
 
   accounts.email.maildirBasePath = ".Maildir";
   accounts.email.accounts = {
-    ba = {
-      userName = "yurialbuquerque@brickabode.com";
-      address = "yurialbuquerque@brickabode.com";
-      gpg.key = "4F4DB1BE3862279F7E6971E4727A35C53FCE6775";
-      gpg.signByDefault = true;
-      imap.host = "imap.gmail.com";
-      mbsync = {
-        enable = true;
-        create = "both";
-        expunge = "both";
-        patterns = [ "*" "!\"[Gmail]/Spam\"" "!\"[Gmail]/Important\"" "!\"[Gmail]/Starred\"" ];
-        extraConfig.account.Timeout = 60;
-      };
-      folders = {
-        inbox = "INBOX";
-        trash = "[Gmail]/Trash";
-        sent = "[Gmail]/Sent Mail";
-        drafts = "[Gmail]/Drafts";
-      };
-      passwordCommand = "gpg --no-tty -qd ~/.authinfo.gpg | sed -n 's,^machine imap.gmail.com login yurialbuquerque@brickabode.com .*password \\\\([^ ]*\\\\).*,\\\\1,p'";
-      smtp.host = "smtp.gmail.com";
-      mu.enable = true;
-      realName = "Yuri Albuquerque";
-    };
-
     personal = {
       userName = "yuridenommus@gmail.com";
       address = "yuridenommus@gmail.com";

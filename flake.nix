@@ -32,7 +32,7 @@
             useUserPackages = true;
             users.yuri = {
 	            imports = [
-	              ./yuri/home.nix
+	              ./linux/yuri/home.nix
 		            nur-no-pkgs.repos.rycee.hmModules.emacs-init
 	            ];
 	          };
@@ -57,7 +57,7 @@
             };
             users.yurialbuquerque = {
               imports = [
-                ./yurialbuquerque/home.nix
+                ./darwin/yurialbuquerque/home.nix
                 nur-no-pkgs.repos.rycee.hmModules.emacs-init
               ];
             };
