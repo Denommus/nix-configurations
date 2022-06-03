@@ -12,6 +12,9 @@ system. I'm also using it on my work machine with success.
 Notice my configuration *only* supports x86-64 systems. I don't have
 access to an ARM system to try to adapt this configuration for it.
 
+You'll of course also need to replace my email configuration with your
+own.
+
 *** NixOS
 
 You probably need to replace my ~hardware-config.nix~ with your own
