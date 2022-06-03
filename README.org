@@ -24,7 +24,7 @@ to use your own video drivers (mine uses Nvidia).
 After that you need to create one symlink:
 
 #+begin_src sh
-  sudo rm -rf /etc/nixos && sudo ln -s $PWD/global/nixos /etc/
+  sudo rm -rf /etc/nixos && sudo ln -s $PWD/ /etc/nixos
 #+end_src
 
 Then you can run:
