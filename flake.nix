@@ -12,9 +12,11 @@
     darwin.inputs.nixpkgs.follows = "nixpkgs-darwin";
     nur-darwin.url = "github:nix-community/NUR";
     nur-darwin.inputs.nixpkgs.follows = "nixpkgs-darwin";
+    home-manager-darwin.url = "github:nix-community/home-manager";
+    home-manager-darwin.inputs.nixpkgs.follows = "nixpkgs-darwin";
   };
 
-  outputs = { self, nixpkgs, nur, home-manager, nixpkgs-darwin, darwin, nur-darwin }@inputs:
+  outputs = { self, nixpkgs, nur, home-manager, nixpkgs-darwin, darwin, nur-darwin, home-manager-darwin }@inputs:
   let
     nur-no-pkgs = import nur {
       pkgs = null;
@@ -57,7 +59,7 @@
       modules = [
         ./darwin-configuration.nix
         { nixpkgs.overlays = [ nur-darwin.overlay ]; }
-        home-manager.darwinModules.home-manager ({
+        home-manager-darwin.darwinModules.home-manager ({
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
