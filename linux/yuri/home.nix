@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 let
   myAspell = pkgs.aspellWithDicts (d: [d.en d.pt_BR]);
   gopanda2 = pkgs.appimageTools.wrapType2 {
@@ -11,6 +11,8 @@ let
   };
   shared = import ../../shared/home.nix { inherit pkgs; };
 in
+lib.recursiveUpdate
+shared
 {
   services.emacs.enable = true;
 
@@ -156,4 +158,5 @@ in
   };
 
   nixpkgs.config.allowUnfree = true;
-} // shared
+}
+
