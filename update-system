@@ -1,4 +1,0 @@
-#!/bin/sh
-
-rm global/nixos/flake.lock
-sudo nixos-rebuild switch
