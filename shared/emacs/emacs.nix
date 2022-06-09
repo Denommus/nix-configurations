@@ -362,6 +362,7 @@ in
 
     company-nixos-options = {
       enable = true;
+      demand = true;
       after = [ "nixos-options" "company" ];
       init = "(add-to-list 'company-backends 'company-nixos-options)";
     };

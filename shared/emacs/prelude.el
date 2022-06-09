@@ -173,16 +173,17 @@
   "Set up the nix sandbox environment for when there's a nix-sandbox."
   (add-hook 'hack-local-variables-hook
             (lambda ()
-              (let ((sandbox (nix-find-sandbox (projectile-project-root))))
-                (when sandbox
-                  (make-local-variable 'process-environment)
-                  (setq process-environment
-                        (cl-remove-if #'remove-unneeded-env
-                                      (split-string (shell-command-to-string
-                                                     (nix-shell-string sandbox
-                                                                       "printenv"))
-                                                    "[\n]")))
-                  (setq exec-path (process-environment-to-exec-path process-environment))))) -1))
+              (when (projectile-project-root)
+                (let ((sandbox (nix-find-sandbox (projectile-project-root))))
+                  (when sandbox
+                    (make-local-variable 'process-environment)
+                    (setq process-environment
+                          (cl-remove-if #'remove-unneeded-env
+                                        (split-string (shell-command-to-string
+                                                       (nix-shell-string sandbox
+                                                                         "printenv"))
+                                                      "[\n]")))
+                    (setq exec-path (process-environment-to-exec-path process-environment)))))) -1))
 
 (add-hook 'change-major-mode-hook #'local-nix-sandbox)
 
@@ -190,4 +191,12 @@
   "Set up lsp after local variables have been loaded."
   (add-hook 'hack-local-variables-hook #'lsp-deferred))
 
-(add-hook 'prog-mode-hook #'lsp-after-local-variables)
+(add-hook 'rust-mode-hook #'lsp-after-local-variables)
+
+(add-hook 'nix-mode-hook #'lsp-after-local-variables)
+
+(add-hook 'haskell-mode-hook #'lsp-after-local-variables)
+
+(add-hook 'haskell-literate-mode-hook #'lsp-after-local-variables)
+
+(add-hook 'tuareg-mode-hook #'lsp-after-local-variables)
