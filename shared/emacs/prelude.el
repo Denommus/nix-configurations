@@ -149,19 +149,33 @@
 (put 'nix-flake 'safe-local-variable (lambda (x) t))
 (put 'nix-file 'safe-local-variable (lambda (x) t))
 
-(defun lsp-nix-sandbox ()
-  "MUST run as the hack-local-variables-hook"
-  (when (derived-mode-p 'prog-mode)
-    (make-local-variable 'process-environment)
-    (let ((sandbox (nix-find-sandbox (lsp-workspace-root))))
-      (print "NIX SANDBOX")
-      (print sandbox)
-      (setq process-environment
-            (cl-remove-if (lambda (x) (string= x ""))
-                          (split-string (shell-command-to-string
-                                         (nix-shell-string sandbox
-                                                           "printenv"))
-                                        "[\n]")))
-      (lsp))))
+(defun remove-unneeded-env (x)
+  (or (string= x "") (string-prefix-p "_" x)))
 
-(add-hook 'hack-local-variables-hook #'lsp-nix-sandbox)
+(defun global-nix-sandbox ()
+  "Set up the nix sandbox env vars for the global environment."
+  (setq process-environment
+        (cl-remove-if #'remove-unneeded-env
+                      (split-string (shell-command-to-string
+                                     (nix-shell-string nil
+                                                       "printenv"))
+                                    "[\n]"))))
+
+
+(add-hook 'after-init-hook #'global-nix-sandbox)
+
+(defun local-nix-sandbox ()
+  "Set up the nix sandbox environment for when there's a nix-sandbox."
+  (add-hook 'hack-local-variables-hook
+            (lambda ()
+              (let ((sandbox (nix-find-sandbox (projectile-project-root))))
+                (when sandbox
+                  (make-local-variable 'process-environment)
+                  (setq process-environment
+                        (cl-remove-if #'remove-unneeded-env
+                                      (split-string (shell-command-to-string
+                                                     (nix-shell-string sandbox
+                                                                       "printenv"))
+                                                    "[\n]")))))) -1))
+
+(add-hook 'change-major-mode-hook #'local-nix-sandbox)

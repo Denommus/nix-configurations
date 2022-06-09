@@ -271,7 +271,6 @@ in
     org-bullets = {
       enable = true;
       after = [ "org" ];
-      demand = true;
       command = [ "org-bullets-mode" ];
       config = "(add-hook 'org-mode-hook #'org-bullets-mode)";
     };
@@ -284,7 +283,6 @@ in
     org-ref = {
       enable = true;
       after = [ "org" ];
-      demand = true;
     };
 
     ox-epub = {
@@ -393,6 +391,9 @@ in
         };
       };
       init = builtins.readFile ./emacs-inits/lsp.el;
+      hook = [
+        "(prog-mode . lsp-deferred)"
+      ];
     };
 
     lsp-haskell = {
@@ -402,7 +403,6 @@ in
 
     lsp-ui = {
       enable = true;
-      demand = true;
       command = [
         "lsp-ui-mode"
       ];
@@ -488,11 +488,6 @@ in
       enable = true;
       after = [ "nix-sandbox" "lsp-mode" "nix-mode" ];
       command = [ "nix-rust-sandbox-setup" ];
-    };
-
-    exec-path-from-shell = {
-      enable = pkgs.stdenv.isDarwin;
-      config = builtins.readFile ./emacs-configs/exec-path-from-shell.el;
     };
 
     dockerfile-mode = {
