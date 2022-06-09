@@ -149,13 +149,19 @@
 (put 'nix-flake 'safe-local-variable (lambda (x) t))
 (put 'nix-file 'safe-local-variable (lambda (x) t))
 
+(defun lsp-nix-sandbox ()
+  "MUST run as the hack-local-variables-hook"
+  (when (derived-mode-p 'prog-mode)
+    (make-local-variable 'process-environment)
+    (let ((sandbox (nix-find-sandbox (lsp-workspace-root))))
+      (print "NIX SANDBOX")
+      (print sandbox)
+      (setq process-environment
+            (cl-remove-if (lambda (x) (string= x ""))
+                          (split-string (shell-command-to-string
+                                         (nix-shell-string sandbox
+                                                           "printenv"))
+                                        "[\n]")))
+      (lsp))))
 
-(defun nix-rust-sandbox-setup ()
-  (message "nix-flake %S" nix-flake)
-  (make-local-variable 'lsp-rust-rls-server-command)
-  (setq lsp-rust-rls-server-command (nix-shell-command (nix-current-sandbox) "rls"))
-  (make-local-variable 'lsp-rust-analyzer-server-command)
-  (setq lsp-rust-analyzer-server-command (nix-shell-command (nix-current-sandbox) "rust-analyzer"))
-  (setq lsp-rust-analyzer-proc-macro-enable t)
-  (lsp))
-
+(add-hook 'hack-local-variables-hook #'lsp-nix-sandbox)

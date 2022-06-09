@@ -196,6 +196,7 @@ in
       diminish = [ "projectile-mode" ];
       command = [ "projectile-mode" ];
       init = "(require 'tramp)";
+      demand = true;
       bindKeyMap = {
         "C-z" = "projectile-command-map";
       };
@@ -487,9 +488,6 @@ in
       enable = true;
       after = [ "nix-sandbox" "lsp-mode" "nix-mode" ];
       command = [ "nix-rust-sandbox-setup" ];
-      hook = [
-        "(rust-mode . nix-rust-sandbox-setup)"
-      ];
     };
 
     exec-path-from-shell = {
