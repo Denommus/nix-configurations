@@ -361,8 +361,8 @@ in
     };
 
     company-nixos-options = {
-      enable = true;
-      demand = true;
+      enable = pkgs.stdenv.isLinux;
+      demand = pkgs.stdenv.isLinux;
       after = [ "nixos-options" "company" ];
       init = "(add-to-list 'company-backends 'company-nixos-options)";
     };
