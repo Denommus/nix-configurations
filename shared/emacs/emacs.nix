@@ -391,9 +391,6 @@ in
         };
       };
       init = builtins.readFile ./emacs-inits/lsp.el;
-      hook = [
-        "(prog-mode . lsp-deferred)"
-      ];
     };
 
     lsp-haskell = {
@@ -420,7 +417,6 @@ in
       enable = true;
       after = [ "lsp-mode" "nix-sandbox" "reason-mode" ];
       defer = true;
-      init = builtins.readFile ./emacs-inits/tuareg.el;
     };
 
     multiple-cursors = {
