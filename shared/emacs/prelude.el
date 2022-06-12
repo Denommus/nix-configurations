@@ -189,7 +189,7 @@
 
 (defun lsp-after-local-variables ()
   "Set up lsp after local variables have been loaded."
-  (add-hook 'hack-local-variables-hook #'lsp-deferred))
+  (add-hook 'hack-local-variables-hook #'lsp-deferred nil t))
 
 (add-hook 'rust-mode-hook #'lsp-after-local-variables)
 
