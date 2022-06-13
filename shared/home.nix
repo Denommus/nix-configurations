@@ -15,7 +15,7 @@
     history.extended = true;
     oh-my-zsh = {
       enable = true;
-      theme = "mortalscumbag";
+      theme = "agnoster";
       plugins = [
         "git"
       ];
