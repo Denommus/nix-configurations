@@ -5,21 +5,26 @@
   services.emacs.client.enable = true;
 
   home.sessionVariablesExtra = ''
-  export EDITOR=emacsclient
+    export EDITOR=emacsclient
   '';
 
   programs.zsh = {
     enable = true;
     enableAutosuggestions = true;
     enableCompletion = true;
+    enableSyntaxHighlighting = true;
     history.extended = true;
     oh-my-zsh = {
       enable = true;
       theme = "agnoster";
       plugins = [
         "git"
+        "sudo"
       ];
     };
+    initExtra = ''
+      unset RPS1
+    '';
   };
 
   programs.git = {
