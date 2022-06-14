@@ -15,6 +15,8 @@ shared
     myAspell
     rustup
     rust-analyzer
+    texlive.combined.scheme-full
+    python310Packages.pygments
   ];
 
   home.activation = {
