@@ -16,7 +16,7 @@
     home-manager-darwin.inputs.nixpkgs.follows = "nixpkgs-darwin";
   };
 
-  outputs = { self, nixpkgs, nur, home-manager, nixpkgs-darwin, darwin, nur-darwin, home-manager-darwin }@inputs:
+  outputs = { self, nixpkgs, nur, home-manager, nixpkgs-darwin, darwin, nur-darwin, home-manager-darwin, ... }@inputs:
   let
     nur-no-pkgs = import nur {
       pkgs = null;
