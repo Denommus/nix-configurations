@@ -63,6 +63,7 @@
       "firefox"
       "epic-games"
       "streamlabs-obs"
+      "anki"
     ];
     taps = [
       "homebrew/cask"
