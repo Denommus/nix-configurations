@@ -7,29 +7,18 @@
     nur.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    nixpkgs-darwin.url = "github:NixOS/nixpkgs/nixpkgs-21.11-darwin";
     darwin.url = "github:lnl7/nix-darwin/master";
-    darwin.inputs.nixpkgs.follows = "nixpkgs-darwin";
-    nur-darwin.url = "github:nix-community/NUR";
-    nur-darwin.inputs.nixpkgs.follows = "nixpkgs-darwin";
-    home-manager-darwin.url = "github:nix-community/home-manager";
-    home-manager-darwin.inputs.nixpkgs.follows = "nixpkgs-darwin";
+    darwin.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, nur, home-manager, nixpkgs-darwin, darwin, nur-darwin, home-manager-darwin, ... }@inputs:
+  outputs = { self, nixpkgs, nur, home-manager, darwin, ... }@inputs:
   let
-    nur-no-pkgs = import nur {
+    nur-no-pkgs = (system: import nur {
       pkgs = null;
       nurpkgs = import nixpkgs {
-        system = "x86_64-linux";
+        inherit system;
       };
-    };
-    nur-darwin-no-pkgs = import nur-darwin {
-      pkgs = null;
-      nurpkgs = import nixpkgs-darwin {
-        system = "x86_64-darwin";
-      };
-    };
+    });
   in {
     nixosConfigurations.yuri-nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
@@ -45,7 +34,7 @@
             users.yuri = {
 	            imports = [
 	              ./linux/yuri/home.nix
-		            nur-no-pkgs.repos.rycee.hmModules.emacs-init
+		            (nur-no-pkgs "x86_64-linux").repos.rycee.hmModules.emacs-init
 	            ];
 	          };
           };
@@ -58,19 +47,18 @@
       specialArgs = { inherit inputs; };
       modules = [
         ./darwin-configuration.nix
-        { nixpkgs.overlays = [ nur-darwin.overlay ]; }
-        home-manager-darwin.darwinModules.home-manager ({
+        { nixpkgs.overlays = [ nur.overlay ]; }
+        home-manager.darwinModules.home-manager ({
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
             extraSpecialArgs = {
-              unstable-pkgs = nixpkgs.legacyPackages.x86_64-darwin;
               system = "x86_64-darwin";
             };
             users.yurialbuquerque = {
               imports = [
                 ./darwin/yurialbuquerque/home.nix
-                nur-darwin-no-pkgs.repos.rycee.hmModules.emacs-init
+                (nur-no-pkgs "x86_64-darwin").repos.rycee.hmModules.emacs-init
               ];
             };
           };

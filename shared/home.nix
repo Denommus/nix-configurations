@@ -8,6 +8,8 @@
     export EDITOR=emacsclient
   '';
 
+  home.stateVersion = "22.11";
+
   programs.zsh = {
     enable = true;
     enableAutosuggestions = true;

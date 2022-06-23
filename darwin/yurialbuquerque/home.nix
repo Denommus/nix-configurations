@@ -1,4 +1,4 @@
-{ config, pkgs, lib, unstable-pkgs, ... }:
+{ config, pkgs, lib, ... }:
 let
   myAspell = pkgs.aspellWithDicts (d: [d.en d.pt_BR]);
   shared = import ../../shared/home.nix { inherit pkgs; };
@@ -6,7 +6,7 @@ in
 lib.recursiveUpdate
 shared
 {
-  programs.emacs.package = unstable-pkgs.emacs28;
+  programs.emacs.package = pkgs.emacs28;
 
   home.sessionVariablesExtra = ''
     export EDITOR=emacsclient
