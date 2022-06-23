@@ -64,6 +64,7 @@
       "epic-games"
       "streamlabs-obs"
       "anki"
+      "krita"
     ];
     taps = [
       "homebrew/cask"
