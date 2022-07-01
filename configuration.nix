@@ -207,7 +207,6 @@ in
 
   nixpkgs.config.firefox.enablePlasmaBrowserIntegration = true;
 
-  virtualisation.virtualbox.host.enable = true;
   virtualisation.docker.enable = true;
 
   hardware.bluetooth.enable = true;

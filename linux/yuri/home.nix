@@ -14,6 +14,7 @@ in
 lib.recursiveUpdate
 shared
 {
+  programs.emacs.package = pkgs.emacs28;
   services.emacs.enable = true;
 
   home.sessionVariablesExtra = ''
