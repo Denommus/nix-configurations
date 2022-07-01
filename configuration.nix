@@ -229,6 +229,9 @@ in
       wqy_microhei
       wqy_zenhei
       ttf-tw-moe
+      anonymousPro
+      fira-code
+      fira-code-symbols
     ];
   };
 
