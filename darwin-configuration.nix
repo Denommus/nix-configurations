@@ -7,6 +7,8 @@
     [ vim
       gitFull
       gnupg
+      nodePackages.npm
+      nodejs
     ];
 
   # Use a custom configuration.nix location.
