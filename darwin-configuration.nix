@@ -65,6 +65,7 @@
       "streamlabs-obs"
       "anki"
       "krita"
+      "steam"
     ];
     taps = [
       "homebrew/cask"
