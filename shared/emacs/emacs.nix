@@ -88,6 +88,11 @@ in
       config = "(global-flycheck-mode 1)";
     };
 
+    flycheck-projectile = {
+      enable = true;
+      after = [ "flycheck" "projectile" ];
+    };
+
     nix-sandbox = {
       enable = true;
       demand = true;
