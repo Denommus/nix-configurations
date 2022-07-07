@@ -169,6 +169,12 @@ in
       ];
     };
 
+    javascript-mode = {
+      enable = true;
+      defer = true;
+      init = "(setq js-indent-level 2)";
+    };
+
     web-mode = {
       enable = true;
       defer = true;
@@ -183,6 +189,7 @@ in
         "\"\\\\.mustache\\\\'\""
         "\"\\\\.djhtml\\\\'\""
         "\"\\\\.razor\\\\'\""
+        "\"\\\\.vue\\\\'\""
       ];
       init = builtins.readFile ./emacs-inits/web-mode.el;
     };
