@@ -6,8 +6,6 @@ in
 lib.recursiveUpdate
 shared
 {
-  programs.emacs.package = pkgs.emacs28;
-
   home.sessionVariablesExtra = ''
     export EDITOR=emacsclient
   '';
