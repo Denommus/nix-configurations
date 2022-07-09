@@ -58,6 +58,8 @@ in
     glxinfo
     nvidia-offload
     iotop
+    e2fsprogs
+    rnix-lsp
   ];
 
   console.useXkbConfig = true;
