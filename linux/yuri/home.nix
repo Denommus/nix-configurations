@@ -29,10 +29,8 @@ shared
     rustup
     rust-analyzer
     discord
-    signal-desktop
     nodejs
     myAspell
-    nodePackages.node2nix
     gcc
     python3
     okular
@@ -56,7 +54,6 @@ shared
     firefox-bin
     python3.pkgs.pygments
     dosbox
-    skypeforlinux
     mpc_cli
     adoptopenjdk-jre-bin
     docker-compose
@@ -68,6 +65,7 @@ shared
     zoom-us
     gopanda2
     wineWowPackages.staging
+    protonup
   ];
 
   services.dropbox.enable = true;
