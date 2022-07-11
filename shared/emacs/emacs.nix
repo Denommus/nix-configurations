@@ -372,13 +372,6 @@ in
       config = "(global-company-mode 1)";
     };
 
-    company-nixos-options = {
-      enable = pkgs.stdenv.isLinux;
-      demand = pkgs.stdenv.isLinux;
-      after = [ "nixos-options" "company" ];
-      init = "(add-to-list 'company-backends 'company-nixos-options)";
-    };
-
     helm-nixos-options = {
       enable = true;
       after = [ "helm" "nixos-options" ];
