@@ -64,8 +64,9 @@ shared
     slack
     zoom-us
     gopanda2
-    wineWowPackages.staging
+    winePackages.staging
     protonup
+    hero-lab
   ];
 
   services.dropbox.enable = true;

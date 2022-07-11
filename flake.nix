@@ -25,7 +25,17 @@
       specialArgs = { inherit inputs; };
       modules = [
         ./configuration.nix
-        { nixpkgs.overlays = [ nur.overlay ]; }
+        {
+          nixpkgs.overlays = [
+            (nur.overlay)
+            (final: prev: {
+              wrap-wine = (import ./linux/wine-packages/wrap-wine.nix { pkgs = final; });
+            })
+            (final: prev: {
+              hero-lab = final.callPackage ./linux/wine-packages/hero-lab.nix {};
+            })
+          ];
+        }
         home-manager.nixosModules.home-manager (let
         in {
           home-manager = {
