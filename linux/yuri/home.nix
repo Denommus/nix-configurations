@@ -51,7 +51,7 @@ shared
     rsync
     screenfetch
     usbutils
-    firefox-bin
+    firefox
     python3.pkgs.pygments
     dosbox
     mpc_cli
@@ -158,5 +158,5 @@ shared
   };
 
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.firefox-bin.enablePlasmaBroserIntegration = true;
 }
-
