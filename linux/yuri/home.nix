@@ -114,8 +114,8 @@ shared
   };
 
   # Opens steam with nvidia-offload
-  xdg.desktopEntries.steam = {
-    name = "steam";
+  xdg.desktopEntries.steam-nvidia = {
+    name = "steam-nvidia";
     exec = "nvidia-offload steam %U";
     terminal = false;
     icon = "steam";
