@@ -37,7 +37,7 @@
     enable = true;
     ignores = [ "*~" ];
     lfs.enable = true;
-    userEmail = "yuri.albuquerque@gmail.com";
+    userEmail = "yuridenommus@gmail.com";
     userName = "Yuri Albuquerque";
     extraConfig = {
       pull.ff = "only";
