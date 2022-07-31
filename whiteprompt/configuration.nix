@@ -11,6 +11,10 @@
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
+  boot.kernelParams = [
+    "i8042.nopnp=1"
+    "pci=nocrs"
+  ];
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "yuri-whiteprompt-nixos"; # Define your hostname.
