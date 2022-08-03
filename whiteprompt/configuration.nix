@@ -105,6 +105,7 @@
 
   programs.steam.enable = true;
   programs.kdeconnect.enable = true;
+  programs.xwayland.enable = true;
 
   # List services that you want to enable:
 
