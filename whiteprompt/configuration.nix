@@ -153,4 +153,6 @@
       fira-code-symbols
     ];
   };
+
+  services.avahi.enable = true;
 }
