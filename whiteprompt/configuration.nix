@@ -44,12 +44,8 @@
   services.xserver.xkbOptions = "ctrl:nocaps";
   i18n.defaultLocale = "pt_BR.UTF-8";
   i18n.inputMethod = {
-    enabled = "fcitx";
-    fcitx.engines = with pkgs.fcitx-engines; [
-      libpinyin
-      mozc
-      skk
-    ];
+    enabled = "fcitx5";
+    fcitx5.addons = [ pkgs.fcitx5-chinese-addons ];
   };
   console.useXkbConfig = true;
 
@@ -155,16 +151,4 @@
   };
 
   services.avahi.enable = true;
-
-  nixpkgs.overlays = [
-    (final: prev: {
-      discord = prev.discord.overrideAttrs (old: rec {
-        version = "0.0.19";
-        src = builtins.fetchurl {
-          url = "https://dl.discordapp.net/apps/linux/${version}/discord-${version}.tar.gz";
-          sha256 = "sha256:1403vdc7p6a8mhr114brfp4dqvikaj5s71wrx20ca5y6srsv5x0r";
-        };
-      });
-    })
-  ];
 }

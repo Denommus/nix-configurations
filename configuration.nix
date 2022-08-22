@@ -66,12 +66,8 @@ in
   # Select internationalisation properties.
   i18n.defaultLocale = "pt_BR.UTF-8";
   i18n.inputMethod = {
-    enabled = "fcitx";
-    fcitx.engines = with pkgs.fcitx-engines; [
-      libpinyin
-      mozc
-      skk
-    ];
+    enabled = "fcitx5";
+    fcitx5.addons = [ pkgs.fcitx5-chinese-addons ];
   };
 
   # Set your time zone.
