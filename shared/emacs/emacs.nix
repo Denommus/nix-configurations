@@ -490,7 +490,7 @@ in
       enable = true;
       after = [ "nix-sandbox" "lsp-mode" "nix-mode" ];
       command = [ "nix-rust-sandbox-setup" ];
-      config = builtins.readFile ./emacs-configs/rust-mode.el;
+      init = builtins.readFile ./emacs-inits/rust-mode.el;
     };
 
     dockerfile-mode = {
