@@ -60,6 +60,7 @@ shared
     hero-lab
     gnumake
     jq
+    openvpn
   ];
 
   services.dropbox.enable = true;
