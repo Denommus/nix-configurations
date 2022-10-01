@@ -61,6 +61,7 @@ shared
     gnumake
     jq
     openvpn
+    teams
   ];
 
   services.dropbox.enable = true;
