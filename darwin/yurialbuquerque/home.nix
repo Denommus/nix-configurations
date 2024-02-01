@@ -12,16 +12,14 @@ shared
   home.packages = with pkgs; [
     myAspell
     rustup
-    rust-analyzer
     texlive.combined.scheme-full
-    python310Packages.pygments
   ];
 
   home.activation = {
-    emacsApp = lib.hm.dag.entryAfter ["writeBoundary"] ''
-      sudo rm -rf /Users/yurialbuquerque/Applications/Emacs.app
-      cp -r ${config.programs.emacs.finalPackage}/Applications/Emacs.app /Users/yurialbuquerque/Applications/Emacs.app
-      defaults write com.apple.dock ResetLaunchPad -bool true;killall Dock
-    '';
+    #emacsApp = lib.hm.dag.entryAfter ["writeBoundary"] ''
+    #  sudo rm -rf /Users/yurialbuquerque/Applications/Emacs.app
+    #  cp -r ${config.programs.emacs.finalPackage}/Applications/Emacs.app /Users/yurialbuquerque/Applications/Emacs.app
+    #  defaults write com.apple.dock ResetLaunchPad -bool true;killall Dock
+    #'';
   };
 }

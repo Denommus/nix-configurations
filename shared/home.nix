@@ -10,15 +10,11 @@
 
   home.stateVersion = "22.11";
 
-  programs.emacs.package = pkgs.emacs.override {
-    nativeComp = true;
-  };
-
   programs.zsh = {
     enable = true;
     enableAutosuggestions = true;
     enableCompletion = true;
-    enableSyntaxHighlighting = true;
+    syntaxHighlighting.enable = true;
     history.extended = true;
     oh-my-zsh = {
       enable = true;

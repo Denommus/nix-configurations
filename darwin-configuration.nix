@@ -29,7 +29,6 @@
   services.nix-daemon.enable = true;
   services.activate-system.enable = true;
   nix = {
-    package = pkgs.nixFlakes;
     extraOptions = ''
     experimental-features = nix-command flakes
     auto-optimise-store = true
@@ -56,23 +55,18 @@
     casks = [
       "element"
       "slack"
-      "dropbox"
-      "keepassxc"
       "docker"
       "spotify"
       "zoom"
       "discord"
-      "firefox"
-      "epic-games"
-      "streamlabs-obs"
       "anki"
       "krita"
       "steam"
     ];
     taps = [
-      "homebrew/cask"
     ];
-    cleanup = "zap";
+    onActivation.cleanup = "zap";
+    onActivation.upgrade = true;
   };
 
   fonts = {
@@ -88,8 +82,8 @@
     ];
   };
 
-  users.users."yurialbuquerque" = {
-    home = "/Users/yurialbuquerque";
+  users.users."yuri" = {
+    home = "/Users/yuri";
     shell = "/bin/zsh";
   };
 

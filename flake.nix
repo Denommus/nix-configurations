@@ -81,8 +81,8 @@
       ];
     };
 
-    darwinConfigurations.Yuris-MacBook-Pro = darwin.lib.darwinSystem {
-      system = "x86_64-darwin";
+    darwinConfigurations.MacBook-Pro-de-Yuri = darwin.lib.darwinSystem {
+      system = "aarch64-darwin";
       specialArgs = { inherit inputs; };
       modules = [
         ./darwin-configuration.nix
@@ -92,12 +92,12 @@
             useGlobalPkgs = true;
             useUserPackages = true;
             extraSpecialArgs = {
-              system = "x86_64-darwin";
+              system = "aarch64-darwin";
             };
-            users.yurialbuquerque = {
+            users.yuri = {
               imports = [
                 ./darwin/yurialbuquerque/home.nix
-                (nur-no-pkgs "x86_64-darwin").repos.rycee.hmModules.emacs-init
+                (nur-no-pkgs "aarch64-darwin").repos.rycee.hmModules.emacs-init
               ];
             };
           };
