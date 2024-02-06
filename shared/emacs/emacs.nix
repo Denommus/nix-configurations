@@ -25,12 +25,6 @@ in
       config = builtins.readFile ./emacs-configs/bbdb.el;
     };
 
-    helm-config = {
-      enable = true;
-      demand = true;
-      after = [ "helm" ];
-    };
-
     helm = {
       enable = true;
       demand = true;
@@ -105,8 +99,8 @@ in
       package = (epkgs: epkgs.nix-sandbox.overrideAttrs (old: {
         patches = (old.patches or []) ++ [
           (pkgs.fetchpatch {
-            url = "https://github.com/Denommus/nix-emacs/commit/aae0150007781a2b64f72122180b92c6a4115c81.patch";
-            sha256 = "sha256-wiYpmO/W4YjqY27q5oWHl2k+ru6W4ZncGfv+E9626vE=";
+            url = "https://github.com/Denommus/nix-emacs/commit/bd07a9cc2ecb0160db7f12b1512d09bfcae31d1f.patch";
+            sha256 = "sha256-FiAq6iejpODCnm+J/2zSuGXxohuaRCpjdxHtRZESiX0=";
           })
         ];
       }));
@@ -517,6 +511,10 @@ in
       enable = true;
       demand = true;
       init = "(global-fira-code-mode)";
+    };
+
+    sqlite3 = {
+      enable = true;
     };
   };
 }
