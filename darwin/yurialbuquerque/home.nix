@@ -7,7 +7,7 @@ lib.recursiveUpdate
 shared
 {
   home.sessionVariablesExtra = ''
-    export EDITOR=emacsclient
+    export PATH="/Users/yuri/.local/share/solana/install/active_release/bin:$PATH"
   '';
   home.packages = with pkgs; [
     myAspell
