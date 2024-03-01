@@ -51,6 +51,7 @@
       "docker-compose"
       "awscli"
       "libpq"
+      "protobuf"
     ];
     casks = [
       "element"
