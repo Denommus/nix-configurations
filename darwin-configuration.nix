@@ -65,6 +65,7 @@
       "steam"
     ];
     taps = [
+      "homebrew/cask"
     ];
     onActivation.cleanup = "zap";
     onActivation.upgrade = true;
