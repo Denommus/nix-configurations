@@ -52,6 +52,7 @@
       "awscli"
       "libpq"
       "protobuf"
+      "libusb"
     ];
     casks = [
       "element"
@@ -65,7 +66,7 @@
       "steam"
     ];
     taps = [
-      "homebrew/cask"
+      # "homebrew/cask"
     ];
     onActivation.cleanup = "zap";
     onActivation.upgrade = true;

@@ -7,7 +7,7 @@ lib.recursiveUpdate
 shared
 {
   home.sessionVariablesExtra = ''
-    export PATH="/Users/yuri/.local/share/solana/install/active_release/bin:$PATH"
+    export PATH="/Users/yuri/.foundry/bin:/Users/yuri/.local/share/solana/install/active_release/bin:$PATH"
     eval "$(/opt/homebrew/bin/brew shellenv)"
   '';
   home.packages = with pkgs; [
