@@ -64,6 +64,7 @@
       "anki"
       "krita"
       "steam"
+      "obs"
     ];
     taps = [
       # "homebrew/cask"
