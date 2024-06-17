@@ -73,18 +73,15 @@
     onActivation.upgrade = true;
   };
 
-  fonts = {
-    fontDir.enable = true;
-    fonts = with pkgs; [
-      anonymousPro
-      ubuntu_font_family
-      wqy_microhei
-      wqy_zenhei
-      ttf-tw-moe
-      fira-code
-      fira-code-symbols
-    ];
-  };
+  fonts.packages = with pkgs; [
+    anonymousPro
+    ubuntu_font_family
+    wqy_microhei
+    wqy_zenhei
+    ttf-tw-moe
+    fira-code
+    fira-code-symbols
+  ];
 
   users.users."yuri" = {
     home = "/Users/yuri";
