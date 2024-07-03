@@ -516,5 +516,13 @@ in
     sqlite3 = {
       enable = true;
     };
+
+    ripgrep = {
+      enable = true;
+    };
+
+    helm-rg = {
+      enable = true;
+    };
   };
 }

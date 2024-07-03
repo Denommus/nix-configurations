@@ -53,6 +53,7 @@
       "libpq"
       "protobuf"
       "libusb"
+      "ripgrep"
     ];
     casks = [
       "element"
