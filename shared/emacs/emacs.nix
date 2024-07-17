@@ -524,5 +524,9 @@ in
     helm-rg = {
       enable = true;
     };
+
+    qml-mode = {
+      enable = true;
+    };
   };
 }
