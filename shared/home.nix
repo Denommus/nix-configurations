@@ -40,4 +40,6 @@
       init.defaultBranch = "main";
     };
   };
+
+  programs.direnv.enable = true;
 }
