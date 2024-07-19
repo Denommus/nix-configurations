@@ -83,7 +83,6 @@ in
 
     flycheck-projectile = {
       enable = true;
-      after = [ "flycheck" "projectile" ];
     };
 
     direnv = {
@@ -94,7 +93,6 @@ in
     smartparens = {
       enable = true;
       demand = true;
-      after = [ "hydra" ];
       command = [
         "smartparens-mode"
         "smartparens-strict-mode"
@@ -230,7 +228,6 @@ in
     org = {
       package = "org-plus-contrib";
       enable = true;
-      after = [ "flyspell" ];
       command = [
         "deactivate-c-tab"
       ];
@@ -257,37 +254,31 @@ in
 
     org-bullets = {
       enable = true;
-      after = [ "org" ];
       command = [ "org-bullets-mode" ];
       config = "(add-hook 'org-mode-hook #'org-bullets-mode)";
     };
 
     ox = {
       enable = true;
-      after = [ "org" ];
     };
 
     org-ref = {
       enable = true;
-      after = [ "org" ];
     };
 
     ox-epub = {
       enable = true;
-      after = [ "org" "ox" ];
       init = "(add-to-list 'org-export-backends 'epub)";
     };
 
     ox-latex = {
       enable = true;
-      after = [ "org" "ox" ];
       config = builtins.readFile ./emacs-configs/ox-latex.el;
     };
 
     dune = {
       enable = true;
       defer = true;
-      after = [ "smartparens" ];
       hook = [ "(dune-mode . enable-smartparens-mode)" ];
     };
 
@@ -301,12 +292,10 @@ in
 
     helm-flyspell = {
       enable = true;
-      after = [ "helm" ];
     };
 
     flyspell = {
       enable = true;
-      after = [ "helm-flyspell" ];
       bindLocal = {
         flyspell-mode-map = {
           "C-;" = "helm-flyspell-correct";
@@ -349,7 +338,6 @@ in
 
     helm-nixos-options = {
       enable = true;
-      after = [ "helm" "nixos-options" ];
       bind = {
         "C-c n" = "helm-nixos-options";
       };
@@ -371,7 +359,10 @@ in
               "M-." = "xref-find-definitions";
         };
       };
-      init = builtins.readFile ./emacs-inits/lsp.el;
+      config = ''
+        (customize-set-variable 'lsp-prefer-flymake nil)
+        (customize-set-variable 'lsp-rust-clippy-preference "on")
+      '';
     };
 
     eglot = {
@@ -384,21 +375,20 @@ in
           "C-c t" = "eglot-find-typeDefinition";
           "C-c r" = "eglot-rename";
           "C-c i" = "eglot-find-typeDefinition";
-          "M-." "xref-find-definitions";
-          "C-." "xref-find-references";
+          "M-." = "xref-find-definitions";
+          "C-." = "xref-find-references";
         };
       };
 
-      custom = ''
-        (eglot-autoshutdown t)
-        (eglot-extend-to-xref t)
-        (eglot-send-changes-idle-time 2.0)
+      config = ''
+        (customize-set-variable 'eglot-autoshutdown t)
+        (customize-set-variable 'eglot-extend-to-xref t)
+        (customize-set-variable 'eglot-send-changes-idle-time 2.0)
       '';
     };
 
     lsp-haskell = {
       enable = true;
-      after = [ "lsp-mode" ];
     };
 
     lsp-ui = {
@@ -411,14 +401,12 @@ in
 
     reason-mode = {
       enable = true;
-      after = [ "lsp-mode" ];
       defer = true;
       init = builtins.readFile ./emacs-inits/reason-mode.el;
     };
 
     tuareg = {
       enable = true;
-      after = [ "lsp-mode" "reason-mode" ];
       defer = true;
     };
 
@@ -445,14 +433,14 @@ in
     haskell-mode = {
       enable = true;
       defer = true;
-      after = [ "lsp-haskell" ];
-      init = builtins.readFile ./emacs-inits/haskell-mode.el;
+      hook = [
+        "(haskell-mode . subword-mode)"
+      ];
     };
 
     helm-bbdb = {
       enable = true;
       command = [ "helm-bbdb" ];
-      after = [ "helm" "bbdb" ];
     };
 
     yaml-mode = {
@@ -485,8 +473,10 @@ in
 
     rust-mode = {
       enable = true;
-      after = [ "lsp-mode" ];
-      init = builtins.readFile ./emacs-inits/rust-mode.el;
+      hook = [
+        "(rust-mode . subword-mode)"
+        "(rust-mode . smartparens-mode)"
+      ];
     };
 
     dockerfile-mode = {
