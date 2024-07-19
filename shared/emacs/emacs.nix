@@ -374,6 +374,28 @@ in
       init = builtins.readFile ./emacs-inits/lsp.el;
     };
 
+    eglot = {
+      enable = true;
+      bindLocal = {
+        eglot-mode-map = {
+          "C-c C-t" = "eglot-find-typeDefinition";
+          "C-c C-r" = "eglot-rename";
+          "C-c C-i" = "eglot-find-typeDefinition";
+          "C-c t" = "eglot-find-typeDefinition";
+          "C-c r" = "eglot-rename";
+          "C-c i" = "eglot-find-typeDefinition";
+          "M-." "xref-find-definitions";
+          "C-." "xref-find-references";
+        };
+      };
+
+      custom = ''
+        (eglot-autoshutdown t)
+        (eglot-extend-to-xref t)
+        (eglot-send-changes-idle-time 2.0)
+      '';
+    };
+
     lsp-haskell = {
       enable = true;
       after = [ "lsp-mode" ];
