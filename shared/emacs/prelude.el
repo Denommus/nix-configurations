@@ -155,17 +155,3 @@
 (defun process-environment-to-exec-path (pe)
   (let ((path (cl-find-if (lambda (x) (string-prefix-p "PATH=" x)) pe)))
     (split-string (cadr (split-string path "=")) ":")))
-
-(defun lsp-after-local-variables ()
-  "Set up lsp after local variables have been loaded."
-  (add-hook 'hack-local-variables-hook #'lsp-deferred nil t))
-
-(add-hook 'rust-mode-hook #'lsp-after-local-variables)
-
-(add-hook 'nix-mode-hook #'lsp-after-local-variables)
-
-(add-hook 'haskell-mode-hook #'lsp-after-local-variables)
-
-(add-hook 'haskell-literate-mode-hook #'lsp-after-local-variables)
-
-(add-hook 'tuareg-mode-hook #'lsp-after-local-variables)
