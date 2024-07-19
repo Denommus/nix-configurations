@@ -74,7 +74,6 @@ in
     flycheck = {
       enable = true;
       demand = true;
-      after = [ "nix-sandbox" ];
       command = [
         "global-flycheck-mode"
       ];
@@ -87,27 +86,9 @@ in
       after = [ "flycheck" "projectile" ];
     };
 
-    nix-sandbox = {
+    direnv = {
       enable = true;
-      demand = true;
-      command = [
-        "nix-current-sandbox"
-        "nix-executable-find"
-        "nix-shell-command"
-      ];
-      after = [ "nix-mode" ];
-      package = (epkgs: epkgs.nix-sandbox.overrideAttrs (old: {
-        patches = (old.patches or []) ++ [
-          (pkgs.fetchpatch {
-            url = "https://github.com/Denommus/nix-emacs/commit/bd07a9cc2ecb0160db7f12b1512d09bfcae31d1f.patch";
-            sha256 = "sha256-FiAq6iejpODCnm+J/2zSuGXxohuaRCpjdxHtRZESiX0=";
-          })
-        ];
-      }));
-    };
-
-    nix-buffer = {
-      enable = true;
+      config = "(direnv-mode)";
     };
 
     smartparens = {
@@ -408,14 +389,14 @@ in
 
     reason-mode = {
       enable = true;
-      after = [ "lsp-mode" "nix-sandbox" ];
+      after = [ "lsp-mode" ];
       defer = true;
       init = builtins.readFile ./emacs-inits/reason-mode.el;
     };
 
     tuareg = {
       enable = true;
-      after = [ "lsp-mode" "nix-sandbox" "reason-mode" ];
+      after = [ "lsp-mode" "reason-mode" ];
       defer = true;
     };
 
@@ -442,7 +423,7 @@ in
     haskell-mode = {
       enable = true;
       defer = true;
-      after = [ "lsp-haskell" "nix-sandbox" ];
+      after = [ "lsp-haskell" ];
       init = builtins.readFile ./emacs-inits/haskell-mode.el;
     };
 
@@ -482,8 +463,7 @@ in
 
     rust-mode = {
       enable = true;
-      after = [ "nix-sandbox" "lsp-mode" "nix-mode" ];
-      command = [ "nix-rust-sandbox-setup" ];
+      after = [ "lsp-mode" ];
       init = builtins.readFile ./emacs-inits/rust-mode.el;
     };
 
