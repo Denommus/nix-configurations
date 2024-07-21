@@ -9,6 +9,7 @@
       gnupg
       nodePackages.npm
       nodejs
+      nixfmt-rfc-style
     ];
 
   # Use a custom configuration.nix location.
