@@ -10,6 +10,7 @@
       nodePackages.npm
       nodejs
       nixfmt-rfc-style
+      lldb
     ];
 
   # Use a custom configuration.nix location.

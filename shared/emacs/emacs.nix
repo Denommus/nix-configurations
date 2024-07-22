@@ -520,5 +520,28 @@ in
     qml-mode = {
       enable = true;
     };
+
+    dap-mode = {
+      enable = true;
+      config = ''
+        (require 'dap-lldb)
+        (require 'dap-gdb-lldb)
+
+        (dap-gdb-lldb-setup)
+
+        (dap-register-debug-template "Rust::LLDB Run Configuration"
+                                     (list :type "lldb-vscode"
+                                           :request "launch"
+                                           :name "LLDB::Run"
+                                           :lldbpath "rust-lldb"
+                                           :target nil
+                                           :cwd nil))
+
+        (with-eval-after-load 'dap-mode
+          (setq dap-lldb-debug-program '("/run/current-system/sw/bin/lldb-vscode"))
+	        (setq dap-default-terminal-kind "integrated") ;; Make sure that terminal programs open a term for I/O in an Emacs buffer
+	        (dap-auto-configure-mode +1))
+      '';
+    };
   };
 }
