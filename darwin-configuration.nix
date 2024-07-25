@@ -11,6 +11,7 @@
       nodejs
       nixfmt-rfc-style
       lldb
+      exercism
     ];
 
   # Use a custom configuration.nix location.
