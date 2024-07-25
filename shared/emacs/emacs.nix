@@ -545,6 +545,8 @@ in
           (setq dap-lldb-debug-program '("/run/current-system/sw/bin/lldb-vscode"))
 	        (setq dap-default-terminal-kind "integrated") ;; Make sure that terminal programs open a term for I/O in an Emacs buffer
 	        (dap-auto-configure-mode +1))
+
+        (require 'dap-ocaml)
       '';
     };
   };
