@@ -31,7 +31,7 @@
 
   programs.git = {
     enable = true;
-    ignores = [ "*~" ];
+    ignores = [ "*~" ".DS_Store" ];
     lfs.enable = true;
     userEmail = "yuridenommus@gmail.com";
     userName = "Yuri Albuquerque";
