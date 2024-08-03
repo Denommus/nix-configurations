@@ -12,6 +12,7 @@
       nixfmt-rfc-style
       lldb
       exercism
+      nixfmt-rfc-style
     ];
 
   # Use a custom configuration.nix location.
