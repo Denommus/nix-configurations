@@ -85,9 +85,16 @@ in
       enable = true;
     };
 
-    direnv = {
+    # direnv = {
+    #   enable = true;
+    #   config = "(direnv-mode)";
+    # };
+
+    envrc = {
       enable = true;
-      config = "(direnv-mode)";
+      hook = [
+        "(after-init . envrc-global-mode)"
+      ];
     };
 
     smartparens = {
