@@ -61,6 +61,10 @@
       save-interprogram-paste-before-kill t
       mouse-yank-at-point t)
 
+(setq insert-directory-program "gls")
+(setq dired-use-ls-dired t)
+(setq dired-listing-switches "-al --group-directories-first")
+
 (defun convert-to-underscore ()
   "Convert the region from camelCase to underscore. Does nothing if no region is set."
   (interactive)

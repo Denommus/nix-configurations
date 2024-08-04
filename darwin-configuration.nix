@@ -59,6 +59,7 @@
       "protobuf"
       "libusb"
       "ripgrep"
+      "coreutils"
     ];
     casks = [
       "element"
