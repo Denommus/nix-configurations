@@ -140,6 +140,10 @@ in
       mode = [
         "\"\\\\.tsx?\\\\'\""
       ];
+      hook = [
+        "(typescript-mode . lsp)"
+        "(typescript-mode . smartparens-mode)"
+      ];
     };
 
     javascript-mode = {
@@ -306,6 +310,10 @@ in
     nix-mode = {
       enable = true;
       demand = true;
+      hook = [
+        "(nix-mode . lsp)"
+        "(nix-mode . smartparens-mode)"
+      ];
     };
 
     nixos-options = {
