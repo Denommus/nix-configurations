@@ -410,12 +410,22 @@ in
     reason-mode = {
       enable = true;
       defer = true;
-      init = builtins.readFile ./emacs-inits/reason-mode.el;
+
+      hook = [
+        "(reason-mode . smartparens-mode)"
+        "(reason-mode . lsp)"
+        "(before-save . refmt-before-save)"
+      ];
     };
 
     tuareg = {
       enable = true;
       defer = true;
+
+      hook = [
+        "(tuareg-mode . smartparens-mode)"
+        "(tuareg-mode . lsp)"
+      ];
     };
 
     multiple-cursors = {
