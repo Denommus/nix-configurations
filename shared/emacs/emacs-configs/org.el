@@ -6,7 +6,6 @@
   (local-unset-key (kbd "<C-tab>")))
 (add-hook 'org-mode-hook #'deactivate-c-tab)
 (add-hook 'org-mode-hook #'auto-fill-mode)
-(add-hook 'org-mode-hook #'(lambda () (flyspell-mode 1)))
 ;(require 'org-ref)
 (require 'org-tempo)
 ;; FIXME: 

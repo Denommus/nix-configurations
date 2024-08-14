@@ -301,16 +301,27 @@ in
       init = "(editorconfig-mode 1)";
     };
 
-    helm-flyspell = {
-      enable = true;
-    };
+    # helm-flyspell = {
+    #   enable = true;
+    # };
 
-    flyspell = {
+    # flyspell = {
+    #   enable = true;
+    #   bindLocal = {
+    #     flyspell-mode-map = {
+    #       "C-;" = "helm-flyspell-correct";
+    #     };
+    #   };
+    # };
+
+    jinx = {
       enable = true;
-      bindLocal = {
-        flyspell-mode-map = {
-          "C-;" = "helm-flyspell-correct";
-        };
+      hook = [
+        "(emacs-startup . global-jinx-mode)"
+      ];
+      bind = {
+        "M-$" = "jinx-correct";
+        "C-M-$" = "jinx-languages";
       };
     };
 
