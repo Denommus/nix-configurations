@@ -19,36 +19,6 @@
       };
     });
   in {
-    nixosConfigurations.yuri-whiteprompt-nixos = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = { inherit inputs; };
-      modules = [
-        ./whiteprompt/configuration.nix
-        {
-          nixpkgs.overlays = [
-            (nur.overlay)
-            (final: prev: {
-              wrap-wine = (import ./linux/wine-packages/wrap-wine.nix { pkgs = final; });
-            })
-            (final: prev: {
-              hero-lab = final.callPackage ./linux/wine-packages/hero-lab.nix {};
-            })
-          ];
-        }
-        home-manager.nixosModules.home-manager {
-          home-manager = {
-            useGlobalPkgs = true;
-            useUserPackages = true;
-            users.yuri = {
-              imports = [
-                ./linux/yuri/home.nix
-                (nur-no-pkgs "x86_64-linux").repos.rycee.hmModules.emacs-init
-              ];
-            };
-          };
-        }
-      ];
-    };
     nixosConfigurations.yuri-nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
