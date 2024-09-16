@@ -34,9 +34,9 @@
   services.nix-daemon.enable = true;
   services.activate-system.enable = true;
   nix = {
+    optimise.automatic = true;
     extraOptions = ''
     experimental-features = nix-command flakes
-    auto-optimise-store = true
     '';
   };
 
