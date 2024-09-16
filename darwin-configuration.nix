@@ -12,7 +12,6 @@
       nixfmt-rfc-style
       lldb
       exercism
-      nixfmt-rfc-style
       nixd
     ];
 
