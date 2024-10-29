@@ -11,6 +11,8 @@
 (setq history-delete-duplicates t)
 (setq create-lockfiles nil)
 (setq desktop-path '("~/.local/emacs/sessions"))
+(setq inhibit-startup-echo-area-message t)
+(setq initial-scratch-message nil)
 (put 'downcase-region 'disabled nil)
 (put 'narrow-to-region 'disabled nil)
 (put 'dired-find-alternate-file 'disabled nil)
