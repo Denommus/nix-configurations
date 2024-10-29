@@ -71,6 +71,7 @@
       "krita"
       "steam"
       "obs"
+      "brave-browser"
     ];
     taps = [
       # "homebrew/cask"
