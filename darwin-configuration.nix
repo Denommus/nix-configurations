@@ -72,6 +72,7 @@
       "steam"
       "obs"
       "brave-browser"
+      "slack-cli"
     ];
     taps = [
       # "homebrew/cask"
