@@ -31,7 +31,6 @@
   # $ darwin-rebuild changelog
   system.stateVersion = 4;
   services.nix-daemon.enable = true;
-  services.activate-system.enable = true;
   nix = {
     optimise.automatic = true;
     extraOptions = ''
