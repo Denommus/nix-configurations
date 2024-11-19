@@ -2,6 +2,9 @@
 {
   programs.emacs.init = import ./emacs/emacs.nix { inherit pkgs; };
   programs.emacs.enable = true;
+  programs.emacs.package = pkgs.emacs.override {
+    withNativeCompilation = false;
+  };
   services.emacs.client.enable = true;
 
   home.sessionVariablesExtra = ''
