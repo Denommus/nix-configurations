@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nur.url = "github:nix-community/NUR";
+    nur.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     darwin.url = "github:lnl7/nix-darwin/master";
@@ -26,7 +27,7 @@
         ./configuration.nix
         {
           nixpkgs.overlays = [
-            (nur.overlay)
+            (nur.overlays.default)
             (final: prev: {
               wrap-wine = (import ./linux/wine-packages/wrap-wine.nix { pkgs = final; });
             })
@@ -55,7 +56,7 @@
       specialArgs = { inherit inputs; };
       modules = [
         ./darwin-configuration.nix
-        { nixpkgs.overlays = [ nur.overlay ]; }
+        { nixpkgs.overlays = [ nur.overlays.default ]; }
         home-manager.darwinModules.home-manager ({
           home-manager = {
             useGlobalPkgs = true;
