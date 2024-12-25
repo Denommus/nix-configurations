@@ -14,6 +14,7 @@ shared
     myAspell
     rustup
     texlive.combined.scheme-full
+    nixpkgs-review
   ];
 
   home.activation = {
