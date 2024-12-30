@@ -374,6 +374,9 @@ in
       command = [
         "lsp"
       ];
+      init = ''
+      (setq lsp-inline-completion-enable t)
+      '';
       bindLocal = {
         lsp-mode-map = {
               "C-c C-t" = "lsp-describe-thing-at-point";
