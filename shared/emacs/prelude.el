@@ -161,3 +161,5 @@
 (defun process-environment-to-exec-path (pe)
   (let ((path (cl-find-if (lambda (x) (string-prefix-p "PATH=" x)) pe)))
     (split-string (cadr (split-string path "=")) ":")))
+
+(setq epa-pinentry-mode 'loopback)
