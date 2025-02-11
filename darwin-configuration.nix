@@ -29,8 +29,8 @@
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
   system.stateVersion = 4;
-  services.nix-daemon.enable = true;
   nix = {
+    enable = true;
     optimise.automatic = true;
     extraOptions = ''
     experimental-features = nix-command flakes
