@@ -81,9 +81,9 @@ in
       config = "(global-flycheck-mode 1)";
     };
 
-    flycheck-projectile = {
-      enable = true;
-    };
+    # flycheck-projectile = {
+    #   enable = true;
+    # };
 
     # direnv = {
     #   enable = true;
@@ -187,26 +187,30 @@ in
       config = "(global-undo-tree-mode 1)";
     };
 
-    projectile = {
-      enable = true;
-      diminish = [ "projectile-mode" ];
-      command = [ "projectile-mode" ];
-      init = "(require 'tramp)";
-      demand = true;
-      bindKeyMap = {
-        "C-z" = "projectile-command-map";
-      };
-      config = builtins.readFile ./emacs-configs/projectile.el;
-    };
+    # projectile = {
+    #   enable = true;
+    #   diminish = [ "projectile-mode" ];
+    #   command = [ "projectile-mode" ];
+    #   init = "(require 'tramp)";
+    #   demand = true;
+    #   bindKeyMap = {
+    #     "C-z" = "projectile-command-map";
+    #   };
+    #   config = builtins.readFile ./emacs-configs/projectile.el;
+    # };
 
-    helm-projectile = {
+    # helm-projectile = {
+    #   enable = true;
+    #   demand = true;
+    #   command = [
+    #     "helm-projectile-on"
+    #   ];
+    #   after = [ "projectile" ];
+    #   config = "(helm-projectile-on)";
+    # };
+
+    project = {
       enable = true;
-      demand = true;
-      command = [
-        "helm-projectile-on"
-      ];
-      after = [ "projectile" ];
-      config = "(helm-projectile-on)";
     };
 
     magit = {
