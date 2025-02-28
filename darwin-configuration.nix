@@ -71,6 +71,7 @@
       "obs"
       "brave-browser"
       "slack-cli"
+      "android-studio"
     ];
     taps = [
       # "homebrew/cask"
