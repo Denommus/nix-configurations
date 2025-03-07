@@ -1,6 +1,7 @@
 (package-initialize)
 (custom-set-variables
- '(inhibit-startup-screen t))
+ '(inhibit-startup-screen t)
+ '(markdown-command "pandoc"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
