@@ -7,6 +7,9 @@ lib.recursiveUpdate
 shared
 {
   home.sessionVariablesExtra = ''
+    export ANDROID_HOME=$HOME/Library/Android/sdk
+    export PATH=$PATH:$ANDROID_HOME/emulator
+    export PATH=$PATH:$ANDROID_HOME/platform-tools
     export PATH="/Users/yuri/.foundry/bin:/Users/yuri/.local/share/solana/install/active_release/bin:$PATH"
     eval "$(/opt/homebrew/bin/brew shellenv)"
   '';
