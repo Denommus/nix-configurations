@@ -151,6 +151,9 @@ in
         "(typescript-mode . lsp)"
         "(typescript-mode . smartparens-mode)"
       ];
+      config = ''
+        (setq typescript-indent-level 2)
+      '';
     };
 
     javascript-mode = {
