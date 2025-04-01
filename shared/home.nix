@@ -3,7 +3,7 @@
   programs.emacs.init = import ./emacs/emacs.nix { inherit pkgs; };
   programs.emacs.enable = true;
   programs.emacs.package = pkgs.emacs30.override {
-    withNativeCompilation = true;
+    withNativeCompilation = false;
   };
   services.emacs.client.enable = true;
 
