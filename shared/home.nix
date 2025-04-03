@@ -41,6 +41,7 @@
     extraConfig = {
       pull.ff = "only";
       init.defaultBranch = "main";
+      user.signingkey = "4F4DB1BE3862279F7E6971E4727A35C53FCE6775";
     };
   };
 
