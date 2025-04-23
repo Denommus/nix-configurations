@@ -72,6 +72,7 @@
       "brave-browser"
       "slack-cli"
       "android-studio"
+      "virtualbox"
     ];
     taps = [
       # "homebrew/cask"
