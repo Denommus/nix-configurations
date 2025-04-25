@@ -36,7 +36,7 @@
             })
           ];
         }
-        home-manager.nixosModules.home-manager ({
+        home-manager.nixosModules.home-manager {
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
@@ -47,7 +47,7 @@
 	            ];
 	          };
           };
-        })
+        }
       ];
     };
 
@@ -57,7 +57,7 @@
       modules = [
         ./darwin-configuration.nix
         { nixpkgs.overlays = [ nur.overlays.default ]; }
-        home-manager.darwinModules.home-manager ({
+        home-manager.darwinModules.home-manager {
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
@@ -71,7 +71,7 @@
               ];
             };
           };
-        })
+        }
       ];
     };
   };
