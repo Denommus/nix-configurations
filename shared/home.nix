@@ -27,7 +27,7 @@
         "sudo"
       ];
     };
-    initExtra = ''
+    initContent = ''
       unset RPS1
     '';
   };
