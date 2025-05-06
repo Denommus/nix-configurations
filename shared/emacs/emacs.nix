@@ -228,6 +228,10 @@ in
       after = [ "magit" ];
     };
 
+    magit-extras = {
+      enable = true;
+    };
+
     forge = {
       enable = true;
       config = builtins.readFile ./emacs-configs/forge.el;
