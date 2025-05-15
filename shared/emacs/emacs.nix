@@ -523,13 +523,11 @@ in
 
     rust-mode = {
       enable = true;
-      config = ''
-        (customize-set-variable 'rust-format-on-save t)
-      '';
       hook = [
         "(rust-mode . subword-mode)"
         "(rust-mode . smartparens-mode)"
         "(rust-mode . lsp)"
+        "(before-save-hook . lsp-format-buffer)"
       ];
     };
 
