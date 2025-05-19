@@ -1,18 +1,25 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
+  system.primaryUser = "yuri";
+
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
-  environment.systemPackages = with pkgs;
-    [ vim
-      gnupg
-      nodePackages.npm
-      nodejs
-      nixfmt-rfc-style
-      lldb
-      exercism
-      nixd
-    ];
+  environment.systemPackages = with pkgs; [
+    vim
+    gnupg
+    nodePackages.npm
+    nodejs
+    nixfmt-rfc-style
+    lldb
+    exercism
+    nixd
+  ];
 
   # Use a custom configuration.nix location.
   # $ darwin-rebuild switch -I darwin-config=$HOME/.config/nixpkgs/darwin/configuration.nix
@@ -23,7 +30,7 @@
   # nix.package = pkgs.nix;
 
   # Create /etc/bashrc that loads the nix-darwin environment.
-  programs.zsh.enable = true;  # default shell on catalina
+  programs.zsh.enable = true; # default shell on catalina
   # programs.fish.enable = true;
 
   # Used for backwards compatibility, please read the changelog before changing.
@@ -33,7 +40,7 @@
     enable = true;
     optimise.automatic = true;
     extraOptions = ''
-    experimental-features = nix-command flakes
+      experimental-features = nix-command flakes
     '';
   };
 
