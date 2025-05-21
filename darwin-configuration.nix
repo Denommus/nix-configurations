@@ -64,6 +64,7 @@
       "libusb"
       "ripgrep"
       "coreutils"
+      "telnet"
     ];
     casks = [
       "element"
