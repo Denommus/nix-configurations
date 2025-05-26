@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1748004251,
-        "narHash": "sha256-XodjkVWTth3A2JpBqGBkdLD9kkWn94rnv98l3xwKukg=",
+        "lastModified": 1748149228,
+        "narHash": "sha256-mmonYFesFo42UUS49Hd0bcbVJRWX/aHBCDYUkkvylf4=",
         "owner": "lnl7",
         "repo": "nix-darwin",
-        "rev": "33220d4791784e4dd4739edd3f6c028020082f91",
+        "rev": "a9939228f661df370c4094fe85f683e45d761dbe",
         "type": "github"
       },
       "original": {
@@ -49,11 +49,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1747978958,
-        "narHash": "sha256-pQQnbxWpY3IiZqgelXHIe/OAE/Yv4NSQq7fch7M6nXQ=",
+        "lastModified": 1748227609,
+        "narHash": "sha256-SaSdslyo6UGDpPUlmrPA4dWOEuxCy2ihRN9K6BnqYsA=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "7419250703fd5eb50e99bdfb07a86671939103ea",
+        "rev": "d23d20f55d49d8818ac1f1b2783671e8a6725022",
         "type": "github"
       },
       "original": {
@@ -64,11 +64,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1747920628,
-        "narHash": "sha256-IlAuXnIi+ZmyS89tt1YOFDCv7FKs9bNBHd3MXMp8PxE=",
+        "lastModified": 1748186667,
+        "narHash": "sha256-UQubDNIQ/Z42R8tPCIpY+BOhlxO8t8ZojwC9o2FW3c8=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "e314d5c6d3b3a0f40ec5bcbc007b0cbe412f48ae",
+        "rev": "bdac72d387dca7f836f6ef1fe547755fb0e9df61",
         "type": "github"
       },
       "original": {
@@ -87,11 +87,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1748004417,
-        "narHash": "sha256-M434Q59SYJ3A7ScHL+DnID1M8q1SZRzLpiR2qwzqS/k=",
+        "lastModified": 1748260026,
+        "narHash": "sha256-pIOmByztJb7xzNxe+dDmZpDKwtSbEUpwx7KX2ENSbS0=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "8dd1d043a5ff27befab37f62aae7a3dd5d640c8f",
+        "rev": "6249b6a84570bab43532051751a36c57e4afce15",
         "type": "github"
       },
       "original": {
