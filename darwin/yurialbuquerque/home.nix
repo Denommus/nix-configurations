@@ -1,11 +1,17 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 let
-  myAspell = pkgs.aspellWithDicts (d: [d.en d.pt_BR]);
+  myAspell = pkgs.aspellWithDicts (d: [
+    d.en
+    d.pt_BR
+  ]);
   shared = import ../../shared/home.nix { inherit pkgs; };
 in
-lib.recursiveUpdate
-shared
-{
+lib.recursiveUpdate shared {
   home.sessionVariablesExtra = ''
     export ANDROID_HOME=$HOME/Library/Android/sdk
     export PATH=$PATH:$ANDROID_HOME/emulator
@@ -17,6 +23,7 @@ shared
     myAspell
     rustup
     texlive.combined.scheme-full
+    texlivePackages.beamer
     nixpkgs-review
   ];
 
