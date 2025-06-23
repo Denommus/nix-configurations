@@ -65,6 +65,7 @@
       "ripgrep"
       "coreutils"
       "telnet"
+      "zstd"
     ];
     casks = [
       "element"
