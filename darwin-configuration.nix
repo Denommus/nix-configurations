@@ -70,7 +70,7 @@
     casks = [
       "element"
       "slack"
-      "docker"
+      "docker-desktop"
       "spotify"
       "zoom"
       "discord"
