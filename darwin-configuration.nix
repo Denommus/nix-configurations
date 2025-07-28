@@ -72,7 +72,6 @@
       "slack"
       "docker-desktop"
       "spotify"
-      "zoom"
       "discord"
       "anki"
       "krita"
