@@ -81,6 +81,7 @@
       "slack-cli"
       "android-studio"
       "virtualbox"
+      "1password"
     ];
     taps = [
       # "homebrew/cask"
