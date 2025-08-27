@@ -84,6 +84,7 @@
       "telegram-desktop"
       "firefox"
       "keepassxc"
+      "dropbox"
     ];
     taps = [
       # "homebrew/cask"
