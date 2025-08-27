@@ -13,8 +13,7 @@
   environment.systemPackages = with pkgs; [
     vim
     gnupg
-    nodePackages.npm
-    nodejs
+    nodejs_latest
     nixfmt-rfc-style
     lldb
     exercism
