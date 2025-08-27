@@ -83,6 +83,7 @@
       "1password"
       "telegram-desktop"
       "firefox"
+      "keepassxc"
     ];
     taps = [
       # "homebrew/cask"
