@@ -81,6 +81,8 @@
       "android-studio"
       "virtualbox"
       "1password"
+      "telegram-desktop"
+      "firefox"
     ];
     taps = [
       # "homebrew/cask"
