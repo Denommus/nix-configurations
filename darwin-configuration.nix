@@ -85,6 +85,7 @@
       "firefox"
       "keepassxc"
       "dropbox"
+      "zoom"
     ];
     taps = [
       # "homebrew/cask"
