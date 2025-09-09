@@ -86,6 +86,7 @@
       "keepassxc"
       "dropbox"
       "zoom"
+      "microsoft-teams"
     ];
     taps = [
       # "homebrew/cask"
