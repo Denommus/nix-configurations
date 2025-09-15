@@ -18,6 +18,7 @@
     lldb
     exercism
     nixd
+    pinentry_mac
   ];
 
   # Use a custom configuration.nix location.
