@@ -87,6 +87,7 @@
       "keepassxc"
       "dropbox"
       "zoom"
+      "libreoffice"
     ];
     taps = [
       # "homebrew/cask"
