@@ -24,6 +24,7 @@ lib.recursiveUpdate shared {
     rustup
     texlive.combined.scheme-full
     texlivePackages.beamer
+    texlivePackages.moderncv
     nixpkgs-review
   ];
 
