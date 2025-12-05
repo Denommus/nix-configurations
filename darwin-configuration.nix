@@ -88,6 +88,7 @@
       "dropbox"
       "zoom"
       "libreoffice"
+      "google-chrome"
     ];
     taps = [
       # "homebrew/cask"
