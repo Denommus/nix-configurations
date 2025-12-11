@@ -19,6 +19,7 @@
     exercism
     nixd
     pinentry_mac
+    wasm-pack
   ];
 
   # Use a custom configuration.nix location.
