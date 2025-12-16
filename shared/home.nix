@@ -34,11 +34,16 @@
 
   programs.git = {
     enable = true;
-    ignores = [ "*~" ".DS_Store" ];
+    ignores = [
+      "*~"
+      ".DS_Store"
+    ];
     lfs.enable = true;
-    userEmail = "yuridenommus@gmail.com";
-    userName = "Yuri Albuquerque";
-    extraConfig = {
+    settings = {
+      user = {
+        email = "yuridenommus@gmail.com";
+        name = "Yuri Albuquerque";
+      };
       pull.ff = "only";
       init.defaultBranch = "main";
       user.signingkey = "4F4DB1BE3862279F7E6971E4727A35C53FCE6775";

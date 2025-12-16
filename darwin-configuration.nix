@@ -100,7 +100,7 @@
 
   fonts.packages = with pkgs; [
     anonymousPro
-    ubuntu_font_family
+    ubuntu-classic
     wqy_microhei
     wqy_zenhei
     ttf-tw-moe
