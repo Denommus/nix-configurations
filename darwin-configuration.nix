@@ -14,7 +14,7 @@
     vim
     gnupg
     nodejs_latest
-    nixfmt-rfc-style
+    nixfmt
     lldb
     exercism
     nixd
