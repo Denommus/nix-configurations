@@ -590,5 +590,9 @@ in
     edit-indirect = {
       enable = true;
     };
+
+    terraform-mode = {
+      enable = true;
+    };
   };
 }
