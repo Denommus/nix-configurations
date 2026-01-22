@@ -5,8 +5,8 @@ let
     version = "0.0";
     src = ./emacs;
     installPhase = ''
-    mkdir $out
-    cp -r * $out/
+      mkdir $out
+      cp -r * $out/
     '';
   };
 in
@@ -106,19 +106,19 @@ in
       ];
       # Leaving this as a string because it refers to an external derivation
       config = ''
-      (defun enable-smartparens-mode ()
-        (smartparens-mode +1)
-        (smartparens-strict-mode 1))
-      (add-hook 'emacs-lisp-mode-hook       #'enable-smartparens-mode)
-      (add-hook 'eval-expression-minibuffer-setup-hook #'enable-smartparens-mode)
-      (add-hook 'ielm-mode-hook             #'enable-smartparens-mode)
-      (add-hook 'lisp-mode-hook             #'enable-smartparens-mode)
-      (add-hook 'lisp-interaction-mode-hook #'enable-smartparens-mode)
-      (add-hook 'scheme-mode-hook           #'enable-smartparens-mode)
-      (add-hook 'clojure-mode-hook          #'enable-smartparens-mode)
-      (add-hook 'ruby-mode-hook #'enable-smartparens-mode)
-      (add-hook 'slime-repl-mode-hook #'enable-smartparens-mode)
-      (load-file "${emacs-dir}/smartparens.el")
+        (defun enable-smartparens-mode ()
+          (smartparens-mode +1)
+          (smartparens-strict-mode 1))
+        (add-hook 'emacs-lisp-mode-hook       #'enable-smartparens-mode)
+        (add-hook 'eval-expression-minibuffer-setup-hook #'enable-smartparens-mode)
+        (add-hook 'ielm-mode-hook             #'enable-smartparens-mode)
+        (add-hook 'lisp-mode-hook             #'enable-smartparens-mode)
+        (add-hook 'lisp-interaction-mode-hook #'enable-smartparens-mode)
+        (add-hook 'scheme-mode-hook           #'enable-smartparens-mode)
+        (add-hook 'clojure-mode-hook          #'enable-smartparens-mode)
+        (add-hook 'ruby-mode-hook #'enable-smartparens-mode)
+        (add-hook 'slime-repl-mode-hook #'enable-smartparens-mode)
+        (load-file "${emacs-dir}/smartparens.el")
       '';
     };
 
@@ -135,9 +135,9 @@ in
       ];
       # Leaving this as a string because it refers to an external derivation
       config = ''
-      (yas-global-mode 1)
-      (yas-load-directory "${emacs-dir}/snippets")
-      (add-hook 'term-mode-hook #'(lambda () (yas-minor-mode -1)))
+        (yas-global-mode 1)
+        (yas-load-directory "${emacs-dir}/snippets")
+        (add-hook 'term-mode-hook #'(lambda () (yas-minor-mode -1)))
       '';
     };
 
@@ -254,10 +254,10 @@ in
         "deactivate-c-tab"
       ];
       bind = {
-          "C-c l" = "org-store-link";
-          "C-c c" = "org-capture";
-          "C-c a" = "org-agenda";
-          "C-c b" = "org-iswitchb";
+        "C-c l" = "org-store-link";
+        "C-c c" = "org-capture";
+        "C-c a" = "org-agenda";
+        "C-c b" = "org-iswitchb";
       };
       bindLocal = {
         org-mode-map = {
@@ -357,9 +357,9 @@ in
       enable = true;
       defer = true;
       init = ''
-      (setq plantuml-jar-path "${pkgs.plantuml}/lib/plantuml.jar")
-      (setq plantuml-executable-path "${pkgs.plantuml}/bin/plantuml")
-      (setq plantuml-exec-mode 'executable)
+        (setq plantuml-jar-path "${pkgs.plantuml}/lib/plantuml.jar")
+        (setq plantuml-executable-path "${pkgs.plantuml}/bin/plantuml")
+        (setq plantuml-exec-mode 'executable)
       '';
     };
 
@@ -386,17 +386,17 @@ in
         "lsp"
       ];
       init = ''
-      (setq lsp-inline-completion-enable t)
+        (setq lsp-inline-completion-enable t)
       '';
       bindLocal = {
         lsp-mode-map = {
-              "C-c C-t" = "lsp-describe-thing-at-point";
-              "C-c C-r" = "lsp-rename";
-              "C-c C-i" = "lsp-describe-thing-at-point";
-              "C-c t" = "lsp-describe-thing-at-point";
-              "C-c r" = "lsp-rename";
-              "C-c i" = "lsp-describe-thing-at-point";
-              "M-." = "xref-find-definitions";
+          "C-c C-t" = "lsp-describe-thing-at-point";
+          "C-c C-r" = "lsp-rename";
+          "C-c C-i" = "lsp-describe-thing-at-point";
+          "C-c t" = "lsp-describe-thing-at-point";
+          "C-c r" = "lsp-rename";
+          "C-c i" = "lsp-describe-thing-at-point";
+          "M-." = "xref-find-definitions";
         };
       };
       config = ''
@@ -514,11 +514,13 @@ in
     fsharp-mode = {
       enable = true;
       defer = true;
-      package = epkgs: epkgs.melpaPackages.fsharp-mode.overrideAttrs (old: {
-        postPatch = ''
-        substituteInPlace fsharp-mode.el --replace "-when-let" "when-let"
-        '';
-      });
+      package =
+        epkgs:
+        epkgs.melpaPackages.fsharp-mode.overrideAttrs (old: {
+          postPatch = ''
+            substituteInPlace fsharp-mode.el --replace "-when-let" "when-let"
+          '';
+        });
     };
 
     rust-mode = {
