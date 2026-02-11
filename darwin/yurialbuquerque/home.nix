@@ -18,8 +18,12 @@ lib.recursiveUpdate shared {
     export PATH=$PATH:$ANDROID_HOME/platform-tools
     export PATH="/Users/yuri/.foundry/bin:/Users/yuri/.local/share/solana/install/active_release/bin:$PATH"
     eval "$(/opt/homebrew/bin/brew shellenv)"
-    alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
   '';
+
+  home.shellAliases = {
+    chrome = "/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome";
+  };
+
   home.packages = with pkgs; [
     myAspell
     rustup
