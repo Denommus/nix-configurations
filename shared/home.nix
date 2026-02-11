@@ -4,6 +4,7 @@
   programs.emacs.enable = true;
   programs.emacs.package = pkgs.emacs30.override {
     withNativeCompilation = false;
+    withImageMagick = true;
   };
   services.emacs.client.enable = true;
 
