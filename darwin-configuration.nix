@@ -67,6 +67,7 @@
       "coreutils"
       "telnet"
       "zstd"
+      "ffmpeg"
     ];
     casks = [
       "element"
