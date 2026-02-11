@@ -91,6 +91,7 @@
       "libreoffice"
       "google-chrome"
       "cursor"
+      "cursor-cli"
     ];
     taps = [
       # "homebrew/cask"
