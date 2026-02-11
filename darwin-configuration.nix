@@ -58,7 +58,6 @@
       "libiconv"
       "libgit2"
       "pkg-config"
-      "docker-compose"
       "awscli"
       "libpq"
       "protobuf"
