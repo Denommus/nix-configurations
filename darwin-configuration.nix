@@ -91,6 +91,7 @@
       "zoom"
       "libreoffice"
       "google-chrome"
+      "cursor"
     ];
     taps = [
       # "homebrew/cask"
