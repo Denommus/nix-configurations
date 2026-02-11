@@ -67,6 +67,8 @@
       "telnet"
       "zstd"
       "ffmpeg"
+      "mermaid-cli"
+      "terramaid"
     ];
     casks = [
       "element"

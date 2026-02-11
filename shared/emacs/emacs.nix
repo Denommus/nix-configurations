@@ -594,5 +594,9 @@ in
     terraform-mode = {
       enable = true;
     };
+
+    mermaid-mode = {
+      enable = true;
+    };
   };
 }
