@@ -18,6 +18,8 @@ lib.recursiveUpdate shared {
     export PATH=$PATH:$ANDROID_HOME/platform-tools
     export PATH="/Users/yuri/.foundry/bin:/Users/yuri/.local/share/solana/install/active_release/bin:$PATH"
     eval "$(/opt/homebrew/bin/brew shellenv)"
+    export NPM_PACKAGES="$HOME/.npm-packages"
+    export PATH="$NPM_PACKAGES/bin:$PATH"
   '';
 
   home.shellAliases = {
