@@ -121,4 +121,6 @@
     enableKeyMapping = true;
     remapCapsLockToControl = true;
   };
+
+  # nix-rosetta-builder.enable = false;
 }

@@ -92,10 +92,10 @@
             };
           }
           # { nix.linux-builder.enable = true; }
-          nix-rosetta-builder.darwinModules.default
-          {
-            nix-rosetta-builder.onDemand = true;
-          }
+          # nix-rosetta-builder.darwinModules.default
+          # {
+          #   nix-rosetta-builder.onDemand = true;
+          # }
         ];
       };
     };
