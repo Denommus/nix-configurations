@@ -598,5 +598,9 @@ in
     mermaid-mode = {
       enable = true;
     };
+
+    nginx-mode = {
+      enable = true;
+    };
   };
 }
