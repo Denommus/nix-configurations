@@ -94,6 +94,7 @@
       "google-chrome"
       "cursor"
       "cursor-cli"
+      "pgadmin4"
     ];
     taps = [
       # "homebrew/cask"
