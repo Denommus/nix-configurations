@@ -95,6 +95,7 @@
       "cursor"
       "cursor-cli"
       "pgadmin4"
+      "vlc"
     ];
     taps = [
       # "homebrew/cask"
