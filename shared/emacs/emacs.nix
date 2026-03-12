@@ -602,5 +602,13 @@ in
     nginx-mode = {
       enable = true;
     };
+
+    solidity-mode = {
+      enable = true;
+
+      hook = [
+        "(solidity-mode . smartparens-mode)"
+      ];
+    };
   };
 }
