@@ -593,6 +593,10 @@ in
 
     terraform-mode = {
       enable = true;
+
+      hook = [
+        "(terraform-mode . smartparens-mode)"
+      ];
     };
 
     mermaid-mode = {
@@ -601,6 +605,10 @@ in
 
     nginx-mode = {
       enable = true;
+
+      hook = [
+        "(nginx-mode . smartparens-mode)"
+      ];
     };
 
     solidity-mode = {
