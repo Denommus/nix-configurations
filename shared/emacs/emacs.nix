@@ -187,7 +187,10 @@ in
       command = [
         "global-undo-tree-mode"
       ];
-      config = "(global-undo-tree-mode 1)";
+      config = ''
+        (setq undo-tree-auto-save-history nil)
+        (global-undo-tree-mode 1)
+      '';
     };
 
     # projectile = {
