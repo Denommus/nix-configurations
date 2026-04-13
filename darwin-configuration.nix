@@ -96,6 +96,7 @@
       "cursor-cli"
       "pgadmin4"
       "vlc"
+      "nordvpn"
     ];
     taps = [
       # "homebrew/cask"
