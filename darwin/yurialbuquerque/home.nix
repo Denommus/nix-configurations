@@ -20,6 +20,7 @@ lib.recursiveUpdate shared {
     eval "$(/opt/homebrew/bin/brew shellenv)"
     export NPM_PACKAGES="$HOME/.npm-packages"
     export PATH="$NPM_PACKAGES/bin:$PATH"
+    export PATH="$HOME/.cargo/bin:$PATH"
   '';
 
   home.shellAliases = {
