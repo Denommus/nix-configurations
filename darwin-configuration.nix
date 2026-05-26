@@ -14,6 +14,7 @@
     vim
     gnupg
     nodejs_latest
+    yarn
     nixfmt
     lldb
     exercism
