@@ -21,6 +21,7 @@ lib.recursiveUpdate shared {
     export NPM_PACKAGES="$HOME/.npm-packages"
     export PATH="$NPM_PACKAGES/bin:$PATH"
     export PATH="$HOME/.cargo/bin:$PATH"
+    export PATH="$HOME/.local/bin:$PATH"
   '';
 
   home.shellAliases = {
