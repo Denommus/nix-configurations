@@ -70,6 +70,7 @@
       "ffmpeg"
       "mermaid-cli"
       "terramaid"
+      "qemu"
     ];
     casks = [
       "element"
@@ -98,6 +99,7 @@
       "pgadmin4"
       "vlc"
       "nordvpn"
+      "utm"
     ];
     taps = [
       # "homebrew/cask"
