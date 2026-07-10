@@ -94,6 +94,7 @@
       "vlc"
       "nordvpn"
       "utm"
+      "transmission"
     ];
     taps = [
       # "homebrew/cask"
