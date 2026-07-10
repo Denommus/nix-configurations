@@ -80,7 +80,6 @@
       "discord"
       "anki"
       "slack-cli"
-      "1password"
       "telegram-desktop"
       "firefox"
       "keepassxc"
