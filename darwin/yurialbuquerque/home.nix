@@ -31,7 +31,7 @@ lib.recursiveUpdate shared {
   home.packages = with pkgs; [
     myAspell
     rustup
-    texlive.combined.scheme-full
+    texliveFull
     texlivePackages.beamer
     texlivePackages.moderncv
     nixpkgs-review

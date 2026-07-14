@@ -1,11 +1,17 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 let
-  myAspell = pkgs.aspellWithDicts (d: [d.en d.pt_BR]);
+  myAspell = pkgs.aspellWithDicts (d: [
+    d.en
+    d.pt_BR
+  ]);
   shared = import ../../shared/home.nix { inherit pkgs; };
 in
-lib.recursiveUpdate
-shared
-{
+lib.recursiveUpdate shared {
   programs.emacs.package = pkgs.emacs28;
   services.emacs.enable = true;
 
@@ -39,7 +45,7 @@ shared
     google-chrome
     krita
     exercism
-    texlive.combined.scheme-full
+    texliveFull
     rsync
     screenfetch
     usbutils
@@ -85,7 +91,12 @@ shared
         enable = true;
         create = "both";
         expunge = "both";
-        patterns = [ "*" "!\"[Gmail]/Spam\"" "!\"[Gmail]/Importante\"" "![Gmail]/Com estrela" ];
+        patterns = [
+          "*"
+          "!\"[Gmail]/Spam\""
+          "!\"[Gmail]/Importante\""
+          "![Gmail]/Com estrela"
+        ];
         extraConfig.account.Timeout = 60;
       };
       folders = {
@@ -115,8 +126,15 @@ shared
     terminal = false;
     icon = "steam";
     type = "Application";
-    categories = [ "Network" "FileTransfer" "Game" ];
-    mimeType = [ "x-scheme-handler/steam" "x-scheme-handler/steamlink" ];
+    categories = [
+      "Network"
+      "FileTransfer"
+      "Game"
+    ];
+    mimeType = [
+      "x-scheme-handler/steam"
+      "x-scheme-handler/steamlink"
+    ];
     prefersNonDefaultGPU = true;
     comment = "Application for managing and playing games on Steam";
     settings = {
