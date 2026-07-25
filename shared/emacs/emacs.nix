@@ -218,9 +218,9 @@ in
     project = {
       enable = true;
       config = ''
-        (keymap-set project-prefix-map "m" #'magit-project-dispatch)
+        (keymap-set project-prefix-map "m" #'magit-status)
         (add-to-list 'project-switch-commands
-                     '(magit-project-dispatch "Magit Dispatch") t)
+                     '(magit-status "Magit Dispatch") t)
       '';
     };
 
