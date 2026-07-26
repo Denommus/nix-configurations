@@ -21,6 +21,8 @@
     nixd
     pinentry_mac
     wasm-pack
+    meson
+    ninja
   ];
 
   # Use a custom configuration.nix location.
@@ -56,6 +58,7 @@
   homebrew = {
     enable = true;
     brews = [
+      "argp-standalone"
       "libiconv"
       "libgit2"
       "pkg-config"
