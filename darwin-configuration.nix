@@ -23,6 +23,7 @@
     wasm-pack
     meson
     ninja
+    cmake
   ];
 
   # Use a custom configuration.nix location.
@@ -58,6 +59,8 @@
   homebrew = {
     enable = true;
     brews = [
+      "webp"
+      "freetype"
       "argp-standalone"
       "libiconv"
       "libgit2"
