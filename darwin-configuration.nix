@@ -79,6 +79,7 @@
       "qemu"
     ];
     casks = [
+      "krita"
       "element"
       "slack"
       "docker-desktop"
