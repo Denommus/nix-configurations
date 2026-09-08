@@ -626,5 +626,9 @@ in
         "(solidity-mode . smartparens-mode)"
       ];
     };
+
+    auctex = {
+      enable = true;
+    };
   };
 }
